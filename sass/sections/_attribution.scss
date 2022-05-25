@@ -1,0 +1,16 @@
+.attribution {
+    display: flex;
+    margin: 40px 0 -30px;
+
+    span {
+        font-family: "Montserrat", sans-serif;
+        font-size: .7rem;
+    }
+
+    &__text {
+        color: $text_white;
+    }
+    &__name {
+        color: $spring_green;
+    }
+}

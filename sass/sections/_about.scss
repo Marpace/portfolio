@@ -16,9 +16,9 @@
             position: absolute;
             top: 0;
             height: 100%;
-            width: 100%;
+            width: 150%;
             border: 1px solid #93C1C7;
-            backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px) opacity(1);
             background-image: linear-gradient(150deg, 
             rgba(68, 188, 224, 0.199),
             rgba(117, 212, 250, 0.514), 
@@ -30,7 +30,7 @@
             transition: .5s;
         }
         .see-through {
-            backdrop-filter: none;
+            backdrop-filter: blur(3px) opacity(0);
             background-image: none;
         }
         .glass-blur:before {

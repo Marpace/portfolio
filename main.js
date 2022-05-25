@@ -1,6 +1,15 @@
 const qs = (selector) => document.querySelector(selector);
 const qsa = (selector) => document.querySelectorAll(selector);
 
+// make arrow disappear when scrolling down
+const arrowDown = qs(".mobile-arrow-down")
+body.addEventListener("scroll", function() {
+    if(body.scrollTop > 30){
+        arrowDown.style.opacity = "0";
+    } else {
+        arrowDown.style.opacity = "1";
+    }
+})
 
 //animation for about section
 const glassPanel = qs(".glass-blur")
