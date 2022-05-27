@@ -1,15 +1,16 @@
 .home {
     height: calc(100vh - 50px);
     width: 100%;
-    padding: 100px 0 20px;
+    padding: 100px 0 70px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    .navigation {
-        display: none;
+    @include responsive($tablet_large) {
+        padding: 0;
+        justify-content: center;
     }
+
     .header {
         width: 100%;
         display: flex;
@@ -17,7 +18,10 @@
 
         .header__title {
             font-size: 3.8rem;
-            line-height: 1.2;        
+            line-height: 1.2; 
+            @include responsive($tablet_large) {
+                font-size: 5rem;
+            }       
         }
 
     }
@@ -29,18 +33,21 @@
         100% {transform: translateY(0px);}
     }
 
-    .mobile-arrow-down {
+    .arrow-down {
         width: 100%;
         text-align: center;
         transition: .3s;
 
-        .mobile-arrow-down__icon {
+        .arrow-down__icon {
             bottom: 20px;
             margin: auto;
             animation-name: upDown;
             animation-duration: 1s;
-            animation-delay: 3s;
+            animation-delay: 2s;
+        }
+        @include responsive($tablet_large) {
+            display: none;
         }
     }
-
 }
+

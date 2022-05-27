@@ -18,16 +18,41 @@
 </head>
 <body>
     <main>
+
+        <!-- ******************* Navigation ******************** -->
+        <aside class="navigation">
+            <div class="navigation__inner-wrap">
+                <div class="navigation__inner">
+                    <div class="navigation__inner-line"></div>
+                    <div class="navigation__inner-section">
+                        <h3>Home</h3>
+                    </div>
+                    <div class="navigation__inner-section">
+                        <h3>About</h3>
+                    </div>
+                    <div class="navigation__inner-section">
+                        <h3>Work</h3>
+                    </div>
+                    <div class="navigation__inner-section">
+                        <h3>Contact</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation__arrows">
+                <img class="navigation__arrows-up js-nav-up" src="images/arrow-up.png" alt="">
+                <img class="navigation__arrows-down js-nav-down" src="images/arrow-down.png" alt="">
+            </div>
+        </aside>
+        
         <!-- ******************* Home ******************** -->
         <section class="home">
-            <aside class="navigation"></aside>
             <header class="header">
                 <h1 class="header__title">Pablo Almonacid <br/>Web Developer</h1>
-                <button class="green-btn"><a>contact</a></button>
+                <button class="green-btn js-contact-btn">contact</button>
                 <button class="green-btn"><a href="/resume.html">resume</a></button>
             </header>
-            <div class="mobile-arrow-down">
-                <img class="mobile-arrow-down__icon" src="images/arrow-down.png">
+            <div class="arrow-down">
+                <img class="arrow-down__icon" src="images/arrow-down.png">
             </div>
         </section>
 
@@ -45,33 +70,36 @@
 
         <!-- ******************* Work ******************** -->
         <section class="work">
+            
+            
+            <!-- ******************* Skills - Mobile ******************** -->
             <div class="skills">
                 <h2 class="section-title">Skills</h2>
                 <div class="skills__wrap">
-                    <div class="skills__column-left">
-                        <div class="column-left__item">
+                    <div class="skills__first-skills">
+                        <div class="first-skills__item">
                             <h3>HTML</h3>
-                            <div class="column-left__line"></div>
+                            <div class="first-skills__line"></div>
                         </div>
-                        <div class="column-left__item">
+                        <div class="first-skills__item">
                             <h3>CSS</h3>
-                            <div class="column-left__line"></div>
+                            <div class="first-skills__line"></div>
                         </div>
-                        <div class="column-left__item">
+                        <div class="first-skills__item">
                             <h3>JAVASCRIPT</h3>
-                            <div class="column-left__line"></div>
+                            <div class="first-skills__line"></div>
                         </div>
-                        <div class="column-left__item">
+                        <div class="first-skills__item">
                             <h3>NODE</h3>
-                            <div class="column-left__line"></div>
+                            <div class="first-skills__line"></div>
                         </div>
-                        <div class="column-left__item">
+                        <div class="first-skills__item">
                             <h3>MONGODB</h3>
-                            <div class="column-left__line"></div>
+                            <div class="first-skills__line"></div>
                         </div>
                        
                     </div>
-                    <div class="skills__column-right">
+                    <div class="skills__second-skills">
                         <h3>EJS</h3>
                         <h3>SASS</h3>
                         <h3>REACT</h3>
@@ -80,9 +108,49 @@
                     </div>
                 </div>
             </div>
+            <!-- ******************* Skills - Desktop ******************** -->
+            
+            <div class="skills-dt">
+                <div class="skills-dt__item">
+                    <h3 class="skills-dt__item-title">HTML</h3>
+                    <div class="skills-dt__item-line"></div>
+                    <h3 class="skills-dt__item-title">EJS</h3>
+                </div>
+                <div class="skills-dt__item">
+                    <h3 class="skills-dt__item-title">CSS</h3>
+                    <div class="skills-dt__item-line"></div>
+                    <h3 class="skills-dt__item-title">SASS</h3>
+                </div>
+                <div class="skills-dt__item">
+                    <h3 class="skills-dt__item-title">JAVASCRIPT</h3>
+                    <div class="skills-dt__item-line"></div>
+                    <h3 class="skills-dt__item-title">REACT</h3>
+                </div>
+                <div class="skills-dt__item">
+                    <h3 class="skills-dt__item-title">NODE</h3>
+                    <div class="skills-dt__item-line"></div>
+                    <h3 class="skills-dt__item-title">EXPRESS</h3>
+                </div>
+                <div class="skills-dt__item">
+                    <h3 class="skills-dt__item-title">MONGODB</h3>
+                    <div class="skills-dt__item-line"></div>
+                    <h3 class="skills-dt__item-title">MONGOOSE</h3>
+                </div>
+            </div>
+
+            <!-- ******************* Projects ******************** -->
             <div class="projects">
                 <h2 class="section-title">Projects</h2>
                 <div class="projects__wrap">
+                    <div class="projects__item">
+                        <!-- <img src="" alt=""> -->
+                        <div class="projects__img"></div>
+                        <div class="projects__links">
+                            <a class="projects__link">Live</a>
+                            <span>|</span>
+                            <a class="projects__link">Repo</a>
+                        </div>
+                    </div>
                     <div class="projects__item">
                         <!-- <img src="" alt=""> -->
                         <div class="projects__img"></div>
@@ -141,15 +209,15 @@
                 <button class="green-btn">Send</button>
             </form>
             <div class="back-to-top">
-                <img class="arrow-up" src="images/arrow-down.png">
-                <span class="back-to-top__text">Back to top</span>
+                <img class="arrow-up js-arrow-up" src="images/arrow-up.png">
+                <span class="back-to-top__text js-back-to-top-btn">Back to top</span>
             </div>
         </section>
 
+        <!-- ******************* Attribution ******************** -->
         <div class="attribution">
             <span class="attribution__text">Designed and coded by&nbsp;</span>
             <span class="attribution__name">Pablo Almonacid</span>
-
         </div>
     </main>
 

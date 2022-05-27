@@ -9,10 +9,14 @@ html, body {
 }
 
 main {
+    position: relative;
     width: 100%;
     @include flex_centered(column);
     background-color: $raisin_black;
-    padding: 50px 30px;
+    padding: 50px 10%;
+    @include responsive($tablet_large) {
+        padding: 50px 25%;
+    }
 }
 
 .visible {

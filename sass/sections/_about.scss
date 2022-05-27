@@ -4,7 +4,7 @@
     .about__text {
         position: relative;
         margin: 40px 0;
-        padding: 20px;
+        padding: 20px 0;
         font-family: "Montserrat", sans-serif;
         width: 100%;
         @include flex_centered(column);
@@ -56,4 +56,23 @@
             transform: rotate(89deg);
         }
     }
+
+    // ******************* MEDIA QUERIES *******************
+
+    @include responsive($tablet) {
+        .about__text {
+            padding: 20px;
+
+            .glass-blur {
+                width: 100%;
+            }
+        }
+    }
+
+    @include responsive($tablet_large) {
+        .about__text-1, .about__text-2 {
+            font-size: 1.2rem;
+        }
+    }
 }
+

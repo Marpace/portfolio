@@ -1,10 +1,109 @@
 const qs = (selector) => document.querySelector(selector);
 const qsa = (selector) => document.querySelectorAll(selector);
 
-// make arrow disappear when scrolling down
-const arrowDown = qs(".mobile-arrow-down")
-body.addEventListener("scroll", function() {
-    if(body.scrollTop > 30){
+
+// ********************  NAVIGATION  ********************
+
+// animation when clicking up and down arrows 
+const pageSections = Array.from(qsa("section"));
+const navUp = qs(".js-nav-up");
+const navDown = qs(".js-nav-down");
+const navInner = qs(".navigation__inner");
+const navSection = qs(".navigation__inner-section");
+
+let sectionNumber = 0;
+
+const scrollNavigation = (index) => {
+    let scrollAmount = 0;
+    titleHeight = parseInt(getComputedStyle(navSection).height.match(/\d+/)[0])
+    switch (index) {
+        case 0:
+            scrollAmount = 0; 
+            break;
+        case 1:
+            scrollAmount -= 190 + titleHeight;
+            break;
+        case 2: 
+            scrollAmount -= 380 + (titleHeight * 2);
+            break;
+        case 3:
+            scrollAmount -= 580 + (titleHeight * 3);
+            break;
+        default:
+            break;
+    }
+    navInner.style.transform = `translateY(${scrollAmount}px)`
+       
+}
+
+navUp.addEventListener("click", function() {
+    
+    sectionNumber -= 1;
+    if(sectionNumber < 0 ) sectionNumber = 0
+    console.log(sectionNumber)
+    
+    scrollNavigation(sectionNumber)
+
+    window.scrollTo({
+        top: pageSections[sectionNumber].offsetTop,
+        left: 0,
+        behavior: 'smooth'
+    })
+});    
+
+navDown.addEventListener("click", function() {
+
+    sectionNumber += 1; 
+    if(sectionNumber > 3 ) sectionNumber = 3;
+    console.log(sectionNumber)
+
+    scrollNavigation(sectionNumber);
+
+    window.scrollTo({
+        top: pageSections[sectionNumber].offsetTop,
+        left: 0,
+        behavior: 'smooth'
+    })
+});    
+
+// observer for page sections so that side navigation coincides with current visibile section 
+
+let sectionsObserverOptions = {
+    rootMargin: "0px",
+    threshold: .7
+}
+
+const updateNavigation = (entries, observer) => {
+    entries.forEach( entry => {
+        if(entry.isIntersecting) {
+            scrollNavigation(pageSections.indexOf(entry.target))
+        }
+    });
+};
+
+const sectionsObserver = new IntersectionObserver(updateNavigation, sectionsObserverOptions);
+pageSections.forEach(section => {
+    sectionsObserver.observe(section)
+})
+
+
+// scroll to contact section when contact button is clicked 
+const contactBtn = qs(".js-contact-btn");
+
+contactBtn.addEventListener("click", function() {
+    window.scrollTo({
+        top: pageSections[3].offsetTop,
+        left: 0,
+        behavior: 'smooth'
+    });
+});
+
+
+
+// make home arrow disappear when scrolling down
+const arrowDown = qs(".arrow-down")
+window.addEventListener("scroll", function() {
+    if(this.scrollY > 50){
         arrowDown.style.opacity = "0";
     } else {
         arrowDown.style.opacity = "1";
@@ -12,19 +111,19 @@ body.addEventListener("scroll", function() {
 })
 
 //animation for about section
-const glassPanel = qs(".glass-blur")
+const glassPanel = qs(".glass-blur");
 const aboutText = qs(".about__text");
+const aboutSection = qs(".about");
 
 let aboutObserverOptions = {
     rootMargin: "0px",
-    threshold: 1
+    threshold: .9
 }
 
 let showAbout = (entries, observer) => {
     entries.forEach( entry => {
         if(entry.isIntersecting) {
             glassPanel.classList.add("see-through")
-            console.log("intersected")
         }
         else {
             glassPanel.classList.remove("see-through");
@@ -34,13 +133,22 @@ let showAbout = (entries, observer) => {
 
 const aboutObserver = new IntersectionObserver(showAbout, aboutObserverOptions);
 
-aboutObserver.observe(aboutText);
+aboutObserver.observe(aboutSection);
 
 // Animation for skills section
-const skillLines = qsa(".column-left__line");
-const skillsLeft = qsa(".column-left__item h3");
-const skillsRight = qsa(".skills__column-right h3");
+// elements for mobile animation
+const skillLines = qsa(".first-skills__line");
+const skillsLeft = qsa(".first-skills__item h3");
+const skillsRight = qsa(".skills__second-skills h3");
 const skillsDiv = qs(".skills");
+
+//elements for desktop animation
+const desktopSkills = Array.from(qsa(".skills-dt__item"))
+
+desktopSkills.forEach( skill => {
+    console.log(skill.children[1])
+})
+
 
 let skillObserverOptions = {
     rootMargin: '0px',
@@ -53,6 +161,8 @@ let showSkill = (entries, observer) => {
     let skillTime2 = 2000;
     entries.forEach(entry => {
         if(entry.isIntersecting){
+
+            //mobile ---------------------
             skillsLeft.forEach( skill => {
                 setTimeout(() => {
                     skill.style.opacity = "1";
@@ -71,6 +181,26 @@ let showSkill = (entries, observer) => {
                 }, skillTime2)
                 skillTime2 += 200;
             })
+
+            //desktop ---------------------
+            desktopSkills.forEach( skill => {
+                setTimeout(() => {
+                    skill.children[0].style.opacity = "1";
+                }, skillTime);
+                setTimeout(() => {
+                    skill.children[2].style.opacity = "1";
+                }, skillTime2);
+                setTimeout(() => {
+                    skill.children[1].style.height = "70px"
+                }, lineTime);
+                skillTime2 += 200;
+                skillTime += 200;
+                lineTime += 200;
+            })
+
+
+
+
         }
     })
 }
@@ -79,3 +209,34 @@ const skillsObserver = new IntersectionObserver(showSkill, skillObserverOptions)
 
 skillsObserver.observe(skillsDiv);
 
+//animation for back to top arrow 
+const arrowUp = qs(".js-arrow-up");
+const attribution = qs(".attribution")
+
+let backToTopOptions = {
+    rootMargin: "0px",
+    threshold: 1
+}
+
+const animateBackToTop = (entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            arrowUp.classList.add("animate-back-to-top");
+        }
+    })
+}
+
+const backToTopObserver = new IntersectionObserver(animateBackToTop, backToTopOptions);
+
+backToTopObserver.observe(attribution);
+
+// event listener for back to top button 
+const backToTopBtn = qs(".js-back-to-top-btn");
+
+backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
+});
