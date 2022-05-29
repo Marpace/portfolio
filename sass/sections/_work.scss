@@ -1,17 +1,20 @@
 .work {
     width: 100%;
-    padding: 100px 0 0 ;
+    padding: 100px 0;
 
     .skills__wrap {
         display: flex;
         justify-content: space-between;
+        gap: 20px;
+        max-width: 500px;
         margin: 30px 0 70px;
-        @include responsive($tablet_large) {
+        @include responsive($tablet) {
             display: none;
         }
 
         .skills__first-skills {
-            flex-basis: 70%;
+            // flex-basis: 70%;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -44,14 +47,15 @@
         }
     }
     .projects {
+        margin-top: 130px;
 
         &__wrap {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
 
             .projects__item {
                 width: 100%;
-                max-width: 500px;
+                max-width: 300px;
                 margin-top: 40px;
 
                 .projects__img {
@@ -74,19 +78,18 @@
                     }
                 }
             }
-            .projects__item:last-child {
-                display: none;
-                @include responsive($tablet_large) {
-                    display: block;
-                }
-            }
-            @include responsive($tablet_large) {
+            @include responsive($tablet) {
+                flex-direction: row;
                 gap: 20px;
                 justify-content: space-between;
 
                 .projects__item {
-                    width: 48%;
+                    width: 45%;
                     max-width: 400px;
+
+                    .projects__img {
+                        height: 160px;
+                    }
                 }
             }
         }

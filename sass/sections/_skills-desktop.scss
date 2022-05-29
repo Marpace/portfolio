@@ -1,9 +1,10 @@
 .skills-dt {
     display: none;
-    @include responsive($tablet_large) { 
+    @include responsive($tablet) { 
         margin: 30px 0 50px;
         display: flex;
         justify-content: space-between;
+        width: 80%;
     
         &__item {
             display: flex;

@@ -11,11 +11,18 @@ html, body {
 main {
     position: relative;
     width: 100%;
+    min-height: 100vh;
     @include flex_centered(column);
     background-color: $raisin_black;
     padding: 50px 10%;
     @include responsive($tablet_large) {
-        padding: 50px 25%;
+        padding: 50px 15%;
+    }
+    @include responsive($desktop) {
+        padding: 50px 20%;
+    }
+    @include responsive($desktop_large) {
+        padding: 50px 30%;
     }
 }
 

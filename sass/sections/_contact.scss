@@ -3,64 +3,50 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 50px;
+    margin: 50px 0 100px;
+    @include responsive($tablet_large) {
+        margin-top: 100px;
+    }
     
-    .section-title {
-        align-self: flex-start;
-    }
-    .contact-form {
+    &__wrap {
         width: 100%;
-        max-width: 500px;
-        margin-bottom: 100px;
-        
-        &__input {
-            display: flex;
-            flex-direction: column;
-            margin-top: 20px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
 
-            label {
-                color: white;
-                font-family: "Montserrat", sans-serif;
-                margin-bottom: 10px;
-                font-size: 1.2rem;
-            }
-            input {
-                height: 60px;
-            }
-            textarea {
-                font-size: 1.2rem;
-                font-family: "Montserrat", sans-serif;
-            }
+        .section-title {
+            align-self: flex-start;
         }
-        .green-btn {
+        .contact-form {
             width: 100%;
-            margin-top: 30px;
+            max-width: 500px;
+            
+            &__input {
+                display: flex;
+                flex-direction: column;
+                margin-top: 20px;
+    
+                label {
+                    color: white;
+                    font-family: "Montserrat", sans-serif;
+                    margin-bottom: 10px;
+                    font-size: 1.2rem;
+                }
+                input {
+                    height: 60px;
+                }
+                textarea {
+                    font-size: 1.2rem;
+                    font-family: "Montserrat", sans-serif;
+                }
+            }
+            .green-btn {
+                width: 100%;
+                margin-top: 30px;
+                @include responsive($tablet) {
+                    width: 170px;
+                }
+            }
         }
-    }
-    .back-to-top {
-        width: 100%;
-        @include flex_centered(column);
-        gap: 5px;
-        
-        .arrow-up {
-            width: 20px;
-        }
-        &__text {
-            color: $spring_green;
-            font-size: 1rem;
-            font-family: "Montserrat", sans-serif;
-        }
-    }
-    @keyframes backToTop {
-        20% {transform: translateY(-10px);}
-        50% {transform: translateY(0px);}
-        75% {transform: translateY(-10px);}
-        100% {transform: translateY(0px);}
-    }
-   
-    .animate-back-to-top {
-        animation-name: backToTop;
-        animation-duration: 1s;
-        animation-delay: 1s;
     }
 }

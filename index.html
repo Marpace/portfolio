@@ -47,9 +47,9 @@
         <!-- ******************* Home ******************** -->
         <section class="home">
             <header class="header">
-                <h1 class="header__title">Pablo Almonacid <br/>Web Developer</h1>
+                <h1 class="header__title">Pablo <br class="title-br"/>Almonacid <br/>Web <br class="title-br"/>Developer</h1>
                 <button class="green-btn js-contact-btn">contact</button>
-                <button class="green-btn"><a href="/resume.html">resume</a></button>
+                <button class="green-btn home-resume-btn"><a href="resume.html">view resume</a></button>
             </header>
             <div class="arrow-down">
                 <img class="arrow-down__icon" src="images/arrow-down.png">
@@ -64,14 +64,11 @@
                 </p>
                 <p class="about__text-2">In programming, I have found my passion. I enjoy debugging code and finding a creative solution to make it work. </p>
                 <div class="glass-blur"></div>
-                <div class="glass-color"></div>
             </div>
         </section>
 
         <!-- ******************* Work ******************** -->
         <section class="work">
-            
-            
             <!-- ******************* Skills - Mobile ******************** -->
             <div class="skills">
                 <h2 class="section-title">Skills</h2>
@@ -169,18 +166,9 @@
                             <a class="projects__link">Repo</a>
                         </div>
                     </div>
-                    <div class="projects__item">
-                        <!-- <img src="" alt=""> -->
-                        <div class="projects__img"></div>
-                        <div class="projects__links">
-                            <a class="projects__link">Live</a>
-                            <span>|</span>
-                            <a class="projects__link">Repo</a>
-                        </div>
-                    </div>
                 </div>
                 <div class="see-more">
-                    <a href="/projects.html">See more</a>
+                    <a href="projects.html">See more</a>
                     <img src="images/arrow-right.png" alt="">
                 </div>
             </div>
@@ -189,36 +177,47 @@
         <!-- ******************* Contact ******************** -->
         <section class="contact">
             <h2 class="section-title">Contact me</h2>
-            <form class="contact-form">
-                <div class="contact-form__input">
-                    <label for="name">Name</label>
-                    <input type="text" name="name">
-                </div>
-                <div class="contact-form__input">
-                    <label for="email">Email</label>
-                    <input type="text" name="email">
-                </div>
-                <div class="contact-form__input">
-                    <label for="phone">Phone</label>
-                    <input type="text" name="phone">
-                </div>
-                <div class="contact-form__input">
-                    <label for="message">Message</label>
-                    <textarea type="text" name="message" rows="5"></textarea>
-                </div>
-                <button class="green-btn">Send</button>
-            </form>
+            <div class="contact__wrap">
+                <form class="contact-form">
+                    <div class="contact-form__input">
+                        <label for="name">Name</label>
+                        <input type="text" name="name">
+                    </div>
+                    <div class="contact-form__input">
+                        <label for="email">Email</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div class="contact-form__input">
+                        <label for="phone">Phone</label>
+                        <input type="text" name="phone">
+                    </div>
+                    <div class="contact-form__input">
+                        <label for="message">Message</label>
+                        <textarea type="text" name="message" rows="5"></textarea>
+                    </div>
+                    <button class="green-btn">Send</button>
+                </form>
+            </div>
+        </section>
+        
+        
+        <footer>
             <div class="back-to-top">
                 <img class="arrow-up js-arrow-up" src="images/arrow-up.png">
                 <span class="back-to-top__text js-back-to-top-btn">Back to top</span>
             </div>
-        </section>
-
-        <!-- ******************* Attribution ******************** -->
-        <div class="attribution">
-            <span class="attribution__text">Designed and coded by&nbsp;</span>
-            <span class="attribution__name">Pablo Almonacid</span>
-        </div>
+            
+            <div class="attribution">
+                <div class="attribution__icons">
+                    <img class="social-icon" src="images/linkedin-icon.png">
+                    <img class="social-icon" src="images/indeed-icon.png">
+                </div>
+                <div class="attribution__text">
+                    <p>Designed and coded by&nbsp;</p>
+                    <p class="attribution__name">Pablo Almonacid</p>
+                </div>
+            </div>
+        </footer>
     </main>
 
 

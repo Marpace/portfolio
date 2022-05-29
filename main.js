@@ -19,28 +19,33 @@ const scrollNavigation = (index) => {
     switch (index) {
         case 0:
             scrollAmount = 0; 
+            navUp.style.opacity = "0"
+            navDown.style.opacity = "1"
             break;
         case 1:
             scrollAmount -= 190 + titleHeight;
+            navUp.style.opacity = "1"
+            navDown.style.opacity = "1"
             break;
         case 2: 
             scrollAmount -= 380 + (titleHeight * 2);
+            navUp.style.opacity = "1"
+            navDown.style.opacity = "1"
             break;
         case 3:
             scrollAmount -= 580 + (titleHeight * 3);
+            navUp.style.opacity = "1"
+            navDown.style.opacity = "0"
             break;
         default:
             break;
     }
     navInner.style.transform = `translateY(${scrollAmount}px)`
-       
 }
 
 navUp.addEventListener("click", function() {
-    
     sectionNumber -= 1;
     if(sectionNumber < 0 ) sectionNumber = 0
-    console.log(sectionNumber)
     
     scrollNavigation(sectionNumber)
 
@@ -52,10 +57,8 @@ navUp.addEventListener("click", function() {
 });    
 
 navDown.addEventListener("click", function() {
-
     sectionNumber += 1; 
     if(sectionNumber > 3 ) sectionNumber = 3;
-    console.log(sectionNumber)
 
     scrollNavigation(sectionNumber);
 
@@ -66,11 +69,11 @@ navDown.addEventListener("click", function() {
     })
 });    
 
-// observer for page sections so that side navigation coincides with current visibile section 
 
+// observer for page sections so that side navigation coincides with current visibile section 
 let sectionsObserverOptions = {
     rootMargin: "0px",
-    threshold: .7
+    threshold: .5
 }
 
 const updateNavigation = (entries, observer) => {
@@ -98,16 +101,10 @@ contactBtn.addEventListener("click", function() {
     });
 });
 
-
-
 // make home arrow disappear when scrolling down
 const arrowDown = qs(".arrow-down")
 window.addEventListener("scroll", function() {
-    if(this.scrollY > 50){
-        arrowDown.style.opacity = "0";
-    } else {
-        arrowDown.style.opacity = "1";
-    }
+    this.scrollY > 50 ? arrowDown.style.opacity = "0" : arrowDown.style.opacity = "1";  
 })
 
 //animation for about section

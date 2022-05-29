@@ -1,11 +1,14 @@
 .home {
     height: calc(100vh - 50px);
     width: 100%;
-    padding: 100px 0 70px;
+    padding: 20px 0 70px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include responsive($tablet) {
+        padding: 200px 0 70px;
+    }
     @include responsive($tablet_large) {
         padding: 0;
         justify-content: center;
@@ -19,11 +22,15 @@
         .header__title {
             font-size: 3.8rem;
             line-height: 1.2; 
-            @include responsive($tablet_large) {
+            @include responsive($tablet) {
                 font-size: 5rem;
-            }       
+            }    
+            @include responsive($tablet_large) {
+                .title-br {
+                    display: none;
+                }
+            }   
         }
-
     }
 
     @keyframes upDown {
