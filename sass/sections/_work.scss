@@ -71,6 +71,10 @@
                     .projects__link {
                         color: $text_white;
                         font-size: 1.3rem;
+                        cursor: pointer;
+                        &:hover {
+                            color: $spring_green;
+                        }
                     }     
                     span {
                         color: $text_white;

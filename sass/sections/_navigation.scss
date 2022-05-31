@@ -45,7 +45,7 @@
                         border-bottom: 4px solid $spring_green;
                     }
                 }
-        }
+            }
         }
         &__arrows {
             position: absolute;
@@ -56,8 +56,17 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-        }
+            opacity: 0;
+            transition: .3s;
 
+            img {
+                cursor: pointer;
+            }
+         
+        }
+        &:hover > .navigation__arrows {
+            opacity: 1;
+        }
     }
     
 }

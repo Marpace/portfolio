@@ -7,7 +7,7 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, p, a {
+h1, h2, h3, h4, p, a, span {
   color: #f6f2ff;
 }
 
@@ -87,12 +87,13 @@ main {
 .green-btn {
   width: 170px;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   background-color: #21fa90;
   border: none;
   margin-top: 20px;
   padding: 5px 0;
   color: #292929;
+  cursor: pointer;
 }
 
 .green-btn a {
@@ -160,6 +161,14 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    opacity: 0;
+    transition: .3s;
+  }
+  .navigation__arrows img {
+    cursor: pointer;
+  }
+  .navigation:hover > .navigation__arrows {
+    opacity: 1;
   }
 }
 
@@ -193,6 +202,10 @@ main {
   .home {
     padding: 0;
     justify-content: center;
+    background-image: url("/images/home-bg.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 115%;
   }
 }
 
@@ -256,14 +269,19 @@ main {
 
 .about {
   padding: 100px 0;
+  width: 100%;
+}
+
+.about .section-title {
+  margin-bottom: 50px;
 }
 
 .about .about__text {
   position: relative;
-  margin: 40px 0;
   padding: 20px 0;
   font-family: "Montserrat", sans-serif;
   width: 100%;
+  max-width: 650px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -271,58 +289,71 @@ main {
   flex-wrap: wrap;
 }
 
+.about .about__text-1, .about .about__text-2 {
+  filter: blur(3px);
+}
+
 .about .about__text-2 {
   margin-top: 20px;
+}
+
+.about .about__text .visible-text {
+  filter: blur(0px);
 }
 
 .about .about__text .glass-blur {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 150%;
+  width: 768px;
+  max-width: 650px;
   border: 1px solid #93C1C7;
-  backdrop-filter: blur(3px) opacity(1);
-  background-image: linear-gradient(150deg, rgba(68, 188, 224, 0.199), rgba(117, 212, 250, 0.514), rgba(68, 188, 224, 0.199), rgba(117, 212, 250, 0.514), rgba(68, 188, 224, 0.199));
+  background-image: linear-gradient(150deg, rgba(68, 188, 224, 0.199), rgba(117, 212, 250, 0.514), rgba(68, 188, 224, 0.199), rgba(117, 212, 250, 0.514), rgba(68, 188, 224, 0.199), rgba(0, 0, 0, 0) 50%);
+  background-size: 350%;
+  background-position: 0 0;
   background-color: rgba(25, 88, 97, 0.1);
   box-shadow: 5px 5px  #195861;
   transition: .5s;
+  cursor: none;
+}
+
+.about .about__text .glass-blur:hover {
+  background-position: 100% 100%;
 }
 
 .about .about__text .see-through {
-  backdrop-filter: blur(3px) opacity(0);
-  background-image: none;
+  background-position: 100% 100%;
 }
 
 .about .about__text .glass-blur:before {
   content: "";
   position: absolute;
   bottom: -6px;
-  left: 0;
-  height: 5px;
-  width: 5px;
-  background-color: #195861;
-  transform: skew(30deg);
+  left: -1px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid #195861;
+  border-left: 5px solid transparent;
 }
 
 .about .about__text .glass-blur:after {
   content: "";
   position: absolute;
-  top: 1px;
-  right: -8px;
-  height: 0;
+  top: 0;
+  right: -6px;
   width: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
+  height: 0;
   border-bottom: 5px solid #195861;
-  transform: rotate(89deg);
+  border-right: 5px solid transparent;
 }
 
 @media only screen and (min-width: 768px) {
   .about .about__text {
-    padding: 20px;
+    padding: 80px 20px 0;
   }
   .about .about__text .glass-blur {
     width: 100%;
+    height: 350px;
   }
 }
 
@@ -416,6 +447,11 @@ main {
 .work .projects__wrap .projects__item .projects__links .projects__link {
   color: #f6f2ff;
   font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.work .projects__wrap .projects__item .projects__links .projects__link:hover {
+  color: #21fa90;
 }
 
 .work .projects__wrap .projects__item .projects__links span {
@@ -490,12 +526,12 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 50px 0 100px;
+  padding: 50px 0 100px;
 }
 
 @media only screen and (min-width: 992px) {
   .contact {
-    margin-top: 100px;
+    padding-top: 100px;
   }
 }
 
@@ -530,11 +566,28 @@ main {
 
 .contact__wrap .contact-form__input input {
   height: 60px;
+  font-size: 1.3rem;
+  font-family: "Montserrat", sans-serif;
+  padding: 0 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .contact__wrap .contact-form__input input {
+    padding: 0 20px;
+  }
 }
 
 .contact__wrap .contact-form__input textarea {
   font-size: 1.2rem;
   font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .contact__wrap .contact-form__input textarea {
+    padding: 20px;
+  }
 }
 
 .contact__wrap .contact-form .green-btn {
@@ -616,29 +669,90 @@ main {
   gap: 40px;
 }
 
+@media only screen and (min-width: 1440px) {
+  .project-main {
+    flex-direction: row;
+    padding: 50px 10%;
+  }
+}
+
 .project-main .project {
   width: 100%;
+  max-width: 600px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
+}
+
+@media only screen and (min-width: 992px) {
+  .project-main .project {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
 
 .project-main .project__photo {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   height: 200px;
   background-color: #f6f2ff;
 }
 
 .project-main .project__text {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
+  text-align: left;
 }
 
-.project-main .project:nth-child(6) {
-  margin-bottom: 50px;
+@media only screen and (min-width: 992px) {
+  .project-main .project__text {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.project-main .project__text p {
+  font-weight: 300;
+  font-size: .9rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .project-main .project__text p {
+    font-size: 1.1rem;
+  }
+}
+
+.project-main .project__text .projects-page__links {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.project-main .project__text .projects-page__links .projects-page__link {
+  font-size: 1rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .project-main .project__text .projects-page__links .projects-page__link {
+    font-size: 1.2rem;
+  }
+}
+
+.project-main .project__text .projects-page__links .projects-page__link:hover {
+  color: #21fa90;
+}
+
+.project-main .projects__btn {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .back-to-top {
@@ -659,6 +773,8 @@ main {
   color: #21fa90;
   font-size: 1rem;
   font-family: "Montserrat", sans-serif;
+  user-select: none;
+  cursor: pointer;
 }
 
 @keyframes backToTop {

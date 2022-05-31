@@ -111,6 +111,7 @@ window.addEventListener("scroll", function() {
 const glassPanel = qs(".glass-blur");
 const aboutText = qs(".about__text");
 const aboutSection = qs(".about");
+const blurryText = qsa(".js-blurry-text");
 
 let aboutObserverOptions = {
     rootMargin: "0px",
@@ -121,16 +122,23 @@ let showAbout = (entries, observer) => {
     entries.forEach( entry => {
         if(entry.isIntersecting) {
             glassPanel.classList.add("see-through")
+            blurryText.forEach(text => {
+                text.classList.add("visible-text")
+            });
         }
         else {
             glassPanel.classList.remove("see-through");
+            blurryText.forEach(text => {
+                text.classList.remove("visible-text")
+            });
         }
     })
 }
 
 const aboutObserver = new IntersectionObserver(showAbout, aboutObserverOptions);
 
-aboutObserver.observe(aboutSection);
+if(window.screen.width < 1440) aboutObserver.observe(aboutSection);
+
 
 // Animation for skills section
 // elements for mobile animation
