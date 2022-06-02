@@ -60,7 +60,6 @@
         <section class="about">
             <h2 class="section-title">Full Transparency</h2>
             <div class="about__text">
-                <div class="backdrop-blur"></div>
                 <p class="about__text-1 js-blurry-text">I’m 31 years old and I am a self taught web developer trying to get my career started and obtain my first web developer role. For the past two years, I’ve dedicated most of my free time to learning web development. From static websites to frameworks, libraries and some backend technologies. 
                 </p>
                 <p class="about__text-2 js-blurry-text">In programming, I have found my passion. I enjoy debugging code and finding a creative solution to make things work. </p>
@@ -105,34 +104,35 @@
                         <h3>MONGOOSE</h3>
                     </div>
                 </div>
-            </div>
+            
             <!-- ******************* Skills - Desktop ******************** -->
             
-            <div class="skills-dt">
-                <div class="skills-dt__item">
-                    <h3 class="skills-dt__item-title">HTML</h3>
-                    <div class="skills-dt__item-line"></div>
-                    <h3 class="skills-dt__item-title">EJS</h3>
-                </div>
-                <div class="skills-dt__item">
-                    <h3 class="skills-dt__item-title">CSS</h3>
-                    <div class="skills-dt__item-line"></div>
-                    <h3 class="skills-dt__item-title">SASS</h3>
-                </div>
-                <div class="skills-dt__item">
-                    <h3 class="skills-dt__item-title">JAVASCRIPT</h3>
-                    <div class="skills-dt__item-line"></div>
-                    <h3 class="skills-dt__item-title">REACT</h3>
-                </div>
-                <div class="skills-dt__item">
-                    <h3 class="skills-dt__item-title">NODE</h3>
-                    <div class="skills-dt__item-line"></div>
-                    <h3 class="skills-dt__item-title">EXPRESS</h3>
-                </div>
-                <div class="skills-dt__item">
-                    <h3 class="skills-dt__item-title">MONGODB</h3>
-                    <div class="skills-dt__item-line"></div>
-                    <h3 class="skills-dt__item-title">MONGOOSE</h3>
+                <div class="skills-dt">
+                    <div class="skills-dt__item">
+                        <h3 class="skills-dt__item-title">HTML</h3>
+                        <div class="skills-dt__item-line"></div>
+                        <h3 class="skills-dt__item-title">EJS</h3>
+                    </div>
+                    <div class="skills-dt__item">
+                        <h3 class="skills-dt__item-title">CSS</h3>
+                        <div class="skills-dt__item-line"></div>
+                        <h3 class="skills-dt__item-title">SASS</h3>
+                    </div>
+                    <div class="skills-dt__item">
+                        <h3 class="skills-dt__item-title">JAVASCRIPT</h3>
+                        <div class="skills-dt__item-line"></div>
+                        <h3 class="skills-dt__item-title">REACT</h3>
+                    </div>
+                    <div class="skills-dt__item">
+                        <h3 class="skills-dt__item-title">NODE</h3>
+                        <div class="skills-dt__item-line"></div>
+                        <h3 class="skills-dt__item-title">EXPRESS</h3>
+                    </div>
+                    <div class="skills-dt__item">
+                        <h3 class="skills-dt__item-title">MONGODB</h3>
+                        <div class="skills-dt__item-line"></div>
+                        <h3 class="skills-dt__item-title">MONGOOSE</h3>
+                    </div>
                 </div>
             </div>
 
@@ -141,30 +141,36 @@
                 <h2 class="section-title">Projects</h2>
                 <div class="projects__wrap">
                     <div class="projects__item">
-                        <!-- <img src="" alt=""> -->
-                        <div class="projects__img"></div>
+                        <div class="projects__img">
+                            <img class="website-screenshot" src="images/paint-paradise-full-page.png" alt="paint paradise website">
+                            <p class="project-name">Paint Paradise</p>
+                        </div>
                         <div class="projects__links">
-                            <a class="projects__link">Live</a>
+                            <a class="projects__link" href="https://marpace.github.io/paint-paradise-new/">Live</a>
                             <span>|</span>
-                            <a class="projects__link">Repo</a>
+                            <a class="projects__link" href="https://github.com/Marpace/paint-paradise-new">Repo</a>
                         </div>
                     </div>
                     <div class="projects__item">
-                        <!-- <img src="" alt=""> -->
-                        <div class="projects__img"></div>
+                        <div class="projects__img">
+                            <img class="website-screenshot"  src="images/banking-full-page.png" alt="">
+                            <p class="project-name">Banking Solutions</p>
+                        </div>
                         <div class="projects__links">
-                            <a class="projects__link">Live</a>
+                            <a class="projects__link" href="https://marpace.github.io/easybank-landing-page/">Live</a>
                             <span>|</span>
-                            <a class="projects__link">Repo</a>
+                            <a class="projects__link" href="https://github.com/Marpace/easybank-landing-page">Repo</a>
                         </div>
                     </div>
                     <div class="projects__item">
-                        <!-- <img src="" alt=""> -->
-                        <div class="projects__img"></div>
+                        <div class="projects__img">
+                            <img class="website-screenshot"  src="images/comment-section-full-page.png" alt="">
+                            <p class="project-name">Comments section</p>
+                        </div>
                         <div class="projects__links">
-                            <a class="projects__link">Live</a>
+                            <a class="projects__link" href="https://comments-challenge.herokuapp.com/">Live</a>
                             <span>|</span>
-                            <a class="projects__link">Repo</a>
+                            <a class="projects__link" href="https://github.com/Marpace/interactive-comments-section">Repo</a>
                         </div>
                     </div>
                 </div>
@@ -179,22 +185,30 @@
         <section class="contact">
             <h2 class="section-title">Contact me</h2>
             <div class="contact__wrap">
-                <form class="contact-form">
+                <form class="contact-form" action="https://formsubmit.co/2d2ae6054f364c0649d09383e5aa88ef" method="POST">
+
+                     <!-- FORMSUBMIT OPTIONS -->
+                    <!-- <input type="hidden" name="_next" value="http://127.0.0.1:5500/success.html"> -->
+                    <input type="hidden" name="_subject" value="New message from portfolio!">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+
                     <div class="contact-form__input">
                         <label for="name">Name</label>
-                        <input type="text" name="name">
+                        <input type="text" name="name" required>
                     </div>
                     <div class="contact-form__input">
                         <label for="email">Email</label>
-                        <input type="text" name="email">
+                        <input type="email" name="email" required>
                     </div>
                     <div class="contact-form__input">
                         <label for="phone">Phone</label>
-                        <input type="text" name="phone">
+                        <input type="number" name="phone">
                     </div>
                     <div class="contact-form__input">
                         <label for="message">Message</label>
-                        <textarea type="text" name="message" rows="5"></textarea>
+                        <textarea type="text" name="message" rows="5" required></textarea>
                     </div>
                     <button class="green-btn">Send</button>
                 </form>
@@ -211,7 +225,6 @@
             <div class="attribution">
                 <div class="attribution__icons">
                     <img class="social-icon" src="images/linkedin-icon.png">
-                    <img class="social-icon" src="images/indeed-icon.png">
                 </div>
                 <div class="attribution__text">
                     <p>Designed and coded by&nbsp;</p>

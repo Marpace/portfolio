@@ -4,19 +4,16 @@
         flex-direction: row-reverse;
         flex-wrap: nowrap;
         align-items: flex-start;
-        gap: 50px;
+        gap: 20px;
     }
 
     &__img {
         width: 100%;
-        @include responsive($desktop) {
-            width: 80%;
-        }
     }
     &__buttons {
         width: 100%;
         @include responsive($desktop) {
-            width: 200px;
+            min-width: 200px;
         }
 
         .pablo-photo {

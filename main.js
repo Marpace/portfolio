@@ -10,90 +10,92 @@ const navUp = qs(".js-nav-up");
 const navDown = qs(".js-nav-down");
 const navInner = qs(".navigation__inner");
 const navSection = qs(".navigation__inner-section");
-
 let sectionNumber = 0;
-
-const scrollNavigation = (index) => {
-    let scrollAmount = 0;
-    titleHeight = parseInt(getComputedStyle(navSection).height.match(/\d+/)[0])
-    switch (index) {
-        case 0:
-            scrollAmount = 0; 
-            navUp.style.opacity = "0"
-            navDown.style.opacity = "1"
-            break;
-        case 1:
-            scrollAmount -= 190 + titleHeight;
-            navUp.style.opacity = "1"
-            navDown.style.opacity = "1"
-            break;
-        case 2: 
-            scrollAmount -= 380 + (titleHeight * 2);
-            navUp.style.opacity = "1"
-            navDown.style.opacity = "1"
-            break;
-        case 3:
-            scrollAmount -= 580 + (titleHeight * 3);
-            navUp.style.opacity = "1"
-            navDown.style.opacity = "0"
-            break;
-        default:
-            break;
-    }
-    navInner.style.transform = `translateY(${scrollAmount}px)`
-}
-
-navUp.addEventListener("click", function() {
-    sectionNumber -= 1;
-    if(sectionNumber < 0 ) sectionNumber = 0
-    
-    scrollNavigation(sectionNumber)
-
-    window.scrollTo({
-        top: pageSections[sectionNumber].offsetTop,
-        left: 0,
-        behavior: 'smooth'
-    })
-});    
-
-navDown.addEventListener("click", function() {
-    sectionNumber += 1; 
-    if(sectionNumber > 3 ) sectionNumber = 3;
-
-    scrollNavigation(sectionNumber);
-
-    window.scrollTo({
-        top: pageSections[sectionNumber].offsetTop,
-        left: 0,
-        behavior: 'smooth'
-    })
-});    
+if(window.screen.width > 1439) {
 
 
-// observer for page sections so that side navigation coincides with current visibile section 
-let sectionsObserverOptions = {
-    rootMargin: "0px",
-    threshold: .5
-}
-
-const updateNavigation = (entries, observer) => {
-    entries.forEach( entry => {
-        if(entry.isIntersecting) {
-            scrollNavigation(pageSections.indexOf(entry.target))
+    const scrollNavigation = (index) => {
+        let scrollAmount = 0;
+        titleHeight = parseInt(getComputedStyle(navSection).height.match(/\d+/)[0])
+        switch (index) {
+            case 0:
+                scrollAmount = 0; 
+                navUp.style.opacity = "0"
+                navDown.style.opacity = "1"
+                break;
+            case 1:
+                scrollAmount -= 190 + titleHeight;
+                navUp.style.opacity = "1"
+                navDown.style.opacity = "1"
+                break;
+            case 2: 
+                scrollAmount -= 380 + (titleHeight * 2);
+                navUp.style.opacity = "1"
+                navDown.style.opacity = "1"
+                break;
+            case 3:
+                scrollAmount -= 580 + (titleHeight * 3);
+                navUp.style.opacity = "1"
+                navDown.style.opacity = "0"
+                break;
+            default:
+                break;
         }
-    });
-};
+        navInner.style.transform = `translateY(${scrollAmount}px)`
+    }
 
-const sectionsObserver = new IntersectionObserver(updateNavigation, sectionsObserverOptions);
-pageSections.forEach(section => {
-    sectionsObserver.observe(section)
-})
+    navUp.addEventListener("click", function() {
+        sectionNumber -= 1;
+        if(sectionNumber < 0 ) sectionNumber = 0
+        
+        scrollNavigation(sectionNumber)
 
+        window.scrollTo({
+            top: pageSections[sectionNumber].offsetTop,
+            left: 0,
+            behavior: 'smooth'
+        })
+    });    
+
+    navDown.addEventListener("click", function() {
+        sectionNumber += 1; 
+        if(sectionNumber > 3 ) sectionNumber = 3;
+
+        scrollNavigation(sectionNumber);
+
+        window.scrollTo({
+            top: pageSections[sectionNumber].offsetTop,
+            left: 0,
+            behavior: 'smooth'
+        })
+    });    
+
+
+    // observer for page sections so that side navigation coincides with current visibile section 
+    let sectionsObserverOptions = {
+        rootMargin: "0px",
+        threshold: .5
+    }
+
+    const updateNavigation = (entries, observer) => {
+        entries.forEach( entry => {
+            if(entry.isIntersecting) {
+                scrollNavigation(pageSections.indexOf(entry.target))
+            }
+        });
+    };
+
+    const sectionsObserver = new IntersectionObserver(updateNavigation, sectionsObserverOptions);
+    pageSections.forEach(section => {
+        sectionsObserver.observe(section)
+    })
+}
 
 // scroll to contact section when contact button is clicked 
 const contactBtn = qs(".js-contact-btn");
 
 contactBtn.addEventListener("click", function() {
+    sectionNumber = 3;
     window.scrollTo({
         top: pageSections[3].offsetTop,
         left: 0,
@@ -107,11 +109,15 @@ window.addEventListener("scroll", function() {
     this.scrollY > 50 ? arrowDown.style.opacity = "0" : arrowDown.style.opacity = "1";  
 })
 
+
+
+
+// ********************  ABOUT  ********************
 //animation for about section
 const glassPanel = qs(".glass-blur");
 const aboutText = qs(".about__text");
 const aboutSection = qs(".about");
-const blurryText = qsa(".js-blurry-text");
+const blurryTexts = qsa(".js-blurry-text");
 
 let aboutObserverOptions = {
     rootMargin: "0px",
@@ -122,13 +128,13 @@ let showAbout = (entries, observer) => {
     entries.forEach( entry => {
         if(entry.isIntersecting) {
             glassPanel.classList.add("see-through")
-            blurryText.forEach(text => {
+            blurryTexts.forEach(text => {
                 text.classList.add("visible-text")
             });
         }
         else {
             glassPanel.classList.remove("see-through");
-            blurryText.forEach(text => {
+            blurryTexts.forEach(text => {
                 text.classList.remove("visible-text")
             });
         }
@@ -137,9 +143,25 @@ let showAbout = (entries, observer) => {
 
 const aboutObserver = new IntersectionObserver(showAbout, aboutObserverOptions);
 
+//observe only for mobile
 if(window.screen.width < 1440) aboutObserver.observe(aboutSection);
 
+// on desktop the animation is triggered by hovering mouse over element
+//did it with javascript because I had to select the parent element
+glassPanel.addEventListener("mouseenter", function() {
+    blurryTexts.forEach( text => {
+        text.classList.add("visible-text")
+    });
+});
+glassPanel.addEventListener("mouseleave", function() {
+    blurryTexts.forEach( text => {
+        text.classList.remove("visible-text")
+    });
+});
 
+
+
+// ********************  WORK  ********************
 // Animation for skills section
 // elements for mobile animation
 const skillLines = qsa(".first-skills__line");
@@ -149,10 +171,6 @@ const skillsDiv = qs(".skills");
 
 //elements for desktop animation
 const desktopSkills = Array.from(qsa(".skills-dt__item"))
-
-desktopSkills.forEach( skill => {
-    console.log(skill.children[1])
-})
 
 
 let skillObserverOptions = {
@@ -202,10 +220,6 @@ let showSkill = (entries, observer) => {
                 skillTime += 200;
                 lineTime += 200;
             })
-
-
-
-
         }
     })
 }
@@ -213,6 +227,35 @@ let showSkill = (entries, observer) => {
 const skillsObserver = new IntersectionObserver(showSkill, skillObserverOptions)
 
 skillsObserver.observe(skillsDiv);
+
+//animation for projects section 
+
+const projectImages = Array.from(qsa(".projects__img"));
+
+const imagesOptions = {
+    root: null,
+    rootMargin: "-30% 0px",
+    threshold: 1
+}
+const showProjects = (entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.children[0].classList.add("project-scroll")
+        } else {
+            entry.target.children[0].classList.remove("project-scroll")
+        }
+    });
+};
+
+const projectObserver = new IntersectionObserver(showProjects, imagesOptions);
+
+if(window.screen.width < 1440) {
+    projectImages.forEach(image => {
+        projectObserver.observe(image);
+    });
+};
+
+
 
 //animation for back to top arrow 
 const arrowUp = qs(".js-arrow-up");

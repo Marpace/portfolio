@@ -12,9 +12,11 @@
         width: 100%;
         max-width: 650px;
         @include flex_centered(column);
+        perspective: 1000px;
         
         &-1, &-2 {
             filter: blur(3px);
+
         }
         &-2 {
             margin-top: 20px;
@@ -41,11 +43,12 @@
             background-position: 0 0;
             background-color: rgba(25, 88, 97, .1);
             box-shadow: 5px 5px  #195861;
-            transition: .5s;
+            transition: .9s;
             cursor: none;
 
             &:hover {
                 background-position: 100% 100%;
+                transform: rotate3d(-1, 1, -0.5, 2deg);
             }
         }
         .see-through {
@@ -78,7 +81,7 @@
 
     @include responsive($tablet) {
         .about__text {
-            padding: 80px 20px 0;
+            padding: 80px 40px 0;
 
             .glass-blur {
                 width: 100%;

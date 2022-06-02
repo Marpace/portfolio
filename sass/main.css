@@ -287,6 +287,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  perspective: 1000px;
 }
 
 .about .about__text-1, .about .about__text-2 {
@@ -313,12 +314,13 @@ main {
   background-position: 0 0;
   background-color: rgba(25, 88, 97, 0.1);
   box-shadow: 5px 5px  #195861;
-  transition: .5s;
+  transition: .9s;
   cursor: none;
 }
 
 .about .about__text .glass-blur:hover {
   background-position: 100% 100%;
+  transform: rotate3d(-1, 1, -0.5, 2deg);
 }
 
 .about .about__text .see-through {
@@ -349,7 +351,7 @@ main {
 
 @media only screen and (min-width: 768px) {
   .about .about__text {
-    padding: 80px 20px 0;
+    padding: 80px 40px 0;
   }
   .about .about__text .glass-blur {
     width: 100%;
@@ -436,6 +438,31 @@ main {
   height: 200px;
   width: 100%;
   background-color: #f6f2ff;
+  overflow: hidden;
+  position: relative;
+}
+
+.work .projects__wrap .projects__item .projects__img .website-screenshot {
+  width: 100%;
+  transition: 20s linear;
+}
+
+.work .projects__wrap .projects__item .projects__img .website-screenshot:hover {
+  transform: translateY(calc(-100% + 200px));
+}
+
+.work .projects__wrap .projects__item .projects__img .project-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #21fa90;
+  padding: 3px 5px;
+  color: #292929;
+  font-size: .9rem;
+}
+
+.work .projects__wrap .projects__item .project-scroll {
+  transform: translateY(calc(-100% + 200px));
 }
 
 .work .projects__wrap .projects__item .projects__links {
@@ -610,18 +637,12 @@ main {
     flex-direction: row-reverse;
     flex-wrap: nowrap;
     align-items: flex-start;
-    gap: 50px;
+    gap: 20px;
   }
 }
 
 .resume__img {
   width: 100%;
-}
-
-@media only screen and (min-width: 1440px) {
-  .resume__img {
-    width: 80%;
-  }
 }
 
 .resume__buttons {
@@ -630,7 +651,7 @@ main {
 
 @media only screen and (min-width: 1440px) {
   .resume__buttons {
-    width: 200px;
+    min-width: 200px;
   }
 }
 
