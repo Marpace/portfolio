@@ -75,7 +75,6 @@
             width: 100%;
             max-width: 300px;
             font-family: "Montserrat", sans-serif;
-            font-size: 1.2rem;
             text-align: left;
             @include responsive($tablet_large) {
                 display: flex; 
@@ -83,11 +82,12 @@
                 justify-content: space-between;
                 min-width: 370px;
             }
-
+            
             .project-title {
+                font-size: 1.2rem;
                 color: $spring_green;
             }
-            .project-description, .built-width {
+            .project-description, .built-with {
                 margin-top: 10px;
                 font-weight: 300;
                 font-size: .9rem;

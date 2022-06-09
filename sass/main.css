@@ -840,7 +840,6 @@ main {
   width: 100%;
   max-width: 300px;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.2rem;
   text-align: left;
 }
 
@@ -854,17 +853,18 @@ main {
 }
 
 .project-main .project__text .project-title {
+  font-size: 1.2rem;
   color: #21fa90;
 }
 
-.project-main .project__text .project-description, .project-main .project__text .built-width {
+.project-main .project__text .project-description, .project-main .project__text .built-with {
   margin-top: 10px;
   font-weight: 300;
   font-size: .9rem;
 }
 
 @media only screen and (min-width: 992px) {
-  .project-main .project__text .project-description, .project-main .project__text .built-width {
+  .project-main .project__text .project-description, .project-main .project__text .built-with {
     font-size: 1rem;
   }
 }
