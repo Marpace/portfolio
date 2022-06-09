@@ -34,6 +34,14 @@ if(window.screen.width > 991){
 
 
 document.addEventListener("click", function(e){
+  if(e.target === projectsModal || 
+    e.target === modalBodyDesktop || 
+    e.target === modalBodyMobile || 
+    e.target === qs(".modal__body")) {
+    projectsModal.classList.remove("show-flex")
+    modalBodyMobile.classList.remove("show-block")
+    modalBodyDesktop.classList.remove("show-block")
+  }
   console.log(e.target)
 });
 
