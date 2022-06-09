@@ -67,10 +67,10 @@
 
                     .website-screenshot {
                         width: 100%;
-                        transition: 20s linear;
+                        transition: 10s linear;
 
                         &:hover {
-                            transform: translateY(calc(-100% + 200px));
+                            transform: translateY(calc(-100% + 160px));
                         }
                     }
                     .project-name {

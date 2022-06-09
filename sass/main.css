@@ -469,11 +469,11 @@ main {
 
 .work .projects__wrap .projects__item .projects__img .website-screenshot {
   width: 100%;
-  transition: 20s linear;
+  transition: 10s linear;
 }
 
 .work .projects__wrap .projects__item .projects__img .website-screenshot:hover {
-  transform: translateY(calc(-100% + 200px));
+  transform: translateY(calc(-100% + 160px));
 }
 
 .work .projects__wrap .projects__item .projects__img .project-name {
