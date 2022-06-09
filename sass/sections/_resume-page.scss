@@ -26,6 +26,8 @@
             }
         }
         .resume__button {
+            display: block;
+            text-align: center;
             width: 100%;
             @include responsive($tablet_large) {
                 width: 50%;

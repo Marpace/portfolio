@@ -103,10 +103,8 @@ main {
   padding: 5px 0;
   color: #292929;
   cursor: pointer;
-}
-
-.green-btn a {
-  color: #292929;
+  text-align: center;
+  display: block;
 }
 
 .navigation {
@@ -704,6 +702,8 @@ main {
 }
 
 .resume__buttons .resume__button {
+  display: block;
+  text-align: center;
   width: 100%;
 }
 
