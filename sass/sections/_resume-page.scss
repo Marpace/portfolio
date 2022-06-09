@@ -13,6 +13,9 @@
     &__buttons {
         width: 100%;
         @include responsive($desktop) {
+            max-width: 200px;
+        }
+        @include responsive($desktop_large) {
             min-width: 200px;
         }
 
