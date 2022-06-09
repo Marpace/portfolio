@@ -17,7 +17,6 @@ if(window.screen.width > 991){
             projectsModal.classList.add("show-flex");
             modalImageMobile.setAttribute("src", attr);
             modalBodyMobile.classList.add("show-block")
-            document.body.classList.add("modal-open");
         });
     });
 
@@ -34,9 +33,15 @@ if(window.screen.width > 991){
 }
 
 
-projectsModal.addEventListener("click", function(){
-    projectsModal.classList.remove("show-flex")
-    modalBodyMobile.classList.remove("show-block")
-    modalBodyDesktop.classList.remove("show-block")
+document.addEventListener("click", function(e){
+  console.log(e.target)
 });
+
+
+
+// projectsModal.addEventListener("click", function(){
+//     projectsModal.classList.remove("show-flex")
+//     modalBodyMobile.classList.remove("show-block")
+//     modalBodyDesktop.classList.remove("show-block")
+// });
 
