@@ -38,8 +38,14 @@ main {
     display: none !important;
 }
 
-.show {
+.show-flex {
     display: flex !important;
 }
+.show-block {
+    display: block !important;
+}
 
-
+.modal-open {
+    overflow: hidden;
+    height: 100vh;
+}

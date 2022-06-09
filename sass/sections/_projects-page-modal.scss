@@ -1,0 +1,105 @@
+.projects-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: .2);
+    @include flex_centered(column);
+    display: none;
+    
+    &__inner{
+        @include flex_centered(column);
+        position: relative;
+        
+        .modal__body {
+            width: 700px;
+            height: 800px;
+            @include flex_centered(column);
+
+            &-mobile {
+                display: none;
+                width: 360px;
+                height: 800px;
+                position: relative;
+                transform: translateY(20px);
+                
+
+                .mobile-viewport {
+                    position: absolute;
+                    height: 600px;
+                    width: 325px;
+                    top: 55px;
+                    left: 14px;
+                    -ms-overflow-style: none; 
+                    scrollbar-width: none; 
+                    overflow-y: scroll; 
+    
+                    .modal__image-mobile {
+                        width: 100%;
+                        // margin-bottom: -5px;
+                    }
+                }
+                .mobile-viewport::-webkit-scrollbar {
+                    display: none; 
+                }
+                .smartphone {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 700px;
+                }
+                &::before {
+                    content: "";
+                    position: fixed;
+                    top: 10px;
+                    left: 13px;
+                    height: 50px;
+                    width: 326px;
+                    background-color: $raisin_black;
+                    z-index: 1000;
+                    border-radius: 40px 40px 0 0;
+                }
+                &::after {
+                    content: "";
+                    position: fixed;
+                    bottom: 110px;
+                    left: 13px;
+                    height: 40px;
+                    width: 326px;
+                    background-color: $raisin_black;
+                    z-index: 1000;
+                    border-radius: 0 0 40px 40px;
+                }
+            }
+            &-desktop {
+                display: none;
+                width: 800px;
+                .desktop-viewport {
+                    position: absolute;
+                    height: 405px;
+                    width: 670px;
+                    top: 61px;
+                    left: 6px;
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                    overflow-y: scroll;
+
+                    .modal__image-desktop {
+                        width: 100%;
+                        min-height: 100%;
+                        object-fit: cover;
+                        margin-bottom: -5px;
+                    }
+                }
+                .laptop {
+                    position: absolute;
+                    top: 50px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: 450px
+                }
+            }
+        }
+    }
+}

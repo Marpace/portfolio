@@ -1,60 +1,104 @@
 .project-main {
     display: flex;
-    flex-direction: column;
     gap: 40px;
+    flex-direction: row;
+    // @include responsive($tablet) {
+    //     flex-direction: row;
+    // }
+    @include responsive($tablet_large) {
+        flex-direction: column;
+    }
     @include responsive($desktop) {
-        flex-direction: row;
         padding: 50px 10%;
     }
 
     .project {
         width: 100%;
-        max-width: 600px;
+        height: 280px;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        @include responsive($tablet) {
+            max-width: 300px;
+        }
         @include responsive($tablet_large) {
+            height: 210px;
             flex-direction: row;
             align-items: flex-start;
+            max-width: 900px;
         }
         @include responsive($desktop) {
-
+            height: 250px;
         }
     
-        &__photo {
+        &__photo-desktop {
             width: 100%;
-            max-width: 500px;
-            height: 200px;
+            height: 148px;
+            max-width: 300px;
             background-color: $text_white;
+            position: relative;
+            overflow: hidden;
+            @include responsive($tablet_large){
+                height: 100%;
+                min-width: 400px;
+            }
+            @include responsive($desktop) {
+                min-width: 464px;
+            }
+        }
+        &__photo-mobile {
+            display: none;
+            @include responsive($tablet_large){
+                position: relative;
+                height: 100%;
+                min-width: 90px;
+                background-color: $text_white;
+                overflow: hidden;
+                display: block;
+            }
+            @include responsive($desktop) {
+                min-width: 110px;
+            }
+        } 
+        .project-screenshot {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            @include responsive($tablet_large) {
+                cursor: pointer;
+            }
         }
         &__text {
             width: 100%;
-            max-width: 500px;
+            max-width: 300px;
             font-family: "Montserrat", sans-serif;
             font-size: 1.2rem;
             text-align: left;
             @include responsive($tablet_large) {
-                height: 200px;
-                display: flex;
+                display: flex; 
                 flex-direction: column;
                 justify-content: space-between;
             }
 
-            p {
+            .project-title {
+                color: $spring_green;
+            }
+            .project-description, .built-width {
+                margin-top: 10px;
                 font-weight: 300;
                 font-size: .9rem;
                 @include responsive($tablet_large) {
-                    font-size: 1.1rem;
-                }
+                    font-size: 1rem;
+                } 
             }
             .projects-page__links {
-                margin-top: 10px;
-                cursor: pointer;
+                margin-top: 20px;
                 .projects-page__link {
                     font-size: 1rem;
+                    cursor: pointer;
                     @include responsive($tablet_large) {
-                        font-size: 1.2rem;
+                        font-size: 1rem;
                     }
                     &:hover {
                         color: $spring_green;

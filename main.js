@@ -81,6 +81,7 @@ if(window.screen.width > 1439) {
         entries.forEach( entry => {
             if(entry.isIntersecting) {
                 scrollNavigation(pageSections.indexOf(entry.target))
+                sectionNumber = pageSections.indexOf(entry.target);
             }
         });
     };
@@ -288,3 +289,5 @@ backToTopBtn.addEventListener("click", function() {
         behavior: 'smooth'
     })
 });
+
+

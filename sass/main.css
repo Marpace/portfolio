@@ -80,8 +80,17 @@ main {
   display: none !important;
 }
 
-.show {
+.show-flex {
   display: flex !important;
+}
+
+.show-block {
+  display: block !important;
+}
+
+.modal-open {
+  overflow: hidden;
+  height: 100vh;
 }
 
 .green-btn {
@@ -292,6 +301,7 @@ main {
 
 .about .about__text-1, .about .about__text-2 {
   filter: blur(3px);
+  transition: .6s;
 }
 
 .about .about__text-2 {
@@ -320,7 +330,20 @@ main {
 
 .about .about__text .glass-blur:hover {
   background-position: 100% 100%;
-  transform: rotate3d(-1, 1, -0.5, 2deg);
+  transform: rotate3d(-1, 1, -0.5, 1deg);
+  box-shadow: 3px 3px #195861;
+}
+
+.about .about__text .glass-blur:hover::before {
+  bottom: -4px;
+  border-top: 3px solid #195861;
+  border-left: 3px solid transparent;
+}
+
+.about .about__text .glass-blur:hover::after {
+  right: -4px;
+  border-bottom: 3px solid #195861;
+  border-right: 3px solid transparent;
 }
 
 .about .about__text .see-through {
@@ -331,11 +354,12 @@ main {
   content: "";
   position: absolute;
   bottom: -6px;
-  left: -1px;
+  left: 0px;
   width: 0;
   height: 0;
   border-top: 5px solid #195861;
   border-left: 5px solid transparent;
+  transition: .6s;
 }
 
 .about .about__text .glass-blur:after {
@@ -347,11 +371,12 @@ main {
   height: 0;
   border-bottom: 5px solid #195861;
   border-right: 5px solid transparent;
+  transition: .6s;
 }
 
 @media only screen and (min-width: 768px) {
   .about .about__text {
-    padding: 80px 40px 0;
+    padding: 60px 40px 0;
   }
   .about .about__text .glass-blur {
     width: 100%;
@@ -604,6 +629,16 @@ main {
   }
 }
 
+.contact__wrap .contact-form__input input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.contact__wrap .contact-form__input input[type=number]::-webkit-inner-spin-button,
+.contact__wrap .contact-form__input input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .contact__wrap .contact-form__input textarea {
   font-size: 1.2rem;
   font-family: "Montserrat", sans-serif;
@@ -686,43 +721,110 @@ main {
 
 .project-main {
   display: flex;
-  flex-direction: column;
   gap: 40px;
+  flex-direction: row;
+}
+
+@media only screen and (min-width: 992px) {
+  .project-main {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
   .project-main {
-    flex-direction: row;
     padding: 50px 10%;
   }
 }
 
 .project-main .project {
   width: 100%;
-  max-width: 600px;
+  height: 280px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   .project-main .project {
-    flex-direction: row;
-    align-items: flex-start;
+    max-width: 300px;
   }
 }
 
-.project-main .project__photo {
+@media only screen and (min-width: 992px) {
+  .project-main .project {
+    height: 210px;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 900px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .project-main .project {
+    height: 250px;
+  }
+}
+
+.project-main .project__photo-desktop {
   width: 100%;
-  max-width: 500px;
-  height: 200px;
+  height: 148px;
+  max-width: 300px;
   background-color: #f6f2ff;
+  position: relative;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 992px) {
+  .project-main .project__photo-desktop {
+    height: 100%;
+    min-width: 400px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .project-main .project__photo-desktop {
+    min-width: 464px;
+  }
+}
+
+.project-main .project__photo-mobile {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .project-main .project__photo-mobile {
+    position: relative;
+    height: 100%;
+    min-width: 90px;
+    background-color: #f6f2ff;
+    overflow: hidden;
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .project-main .project__photo-mobile {
+    min-width: 110px;
+  }
+}
+
+.project-main .project .project-screenshot {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+  .project-main .project .project-screenshot {
+    cursor: pointer;
+  }
 }
 
 .project-main .project__text {
   width: 100%;
-  max-width: 500px;
+  max-width: 300px;
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   text-align: left;
@@ -730,36 +832,40 @@ main {
 
 @media only screen and (min-width: 992px) {
   .project-main .project__text {
-    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 }
 
-.project-main .project__text p {
+.project-main .project__text .project-title {
+  color: #21fa90;
+}
+
+.project-main .project__text .project-description, .project-main .project__text .built-width {
+  margin-top: 10px;
   font-weight: 300;
   font-size: .9rem;
 }
 
 @media only screen and (min-width: 992px) {
-  .project-main .project__text p {
-    font-size: 1.1rem;
+  .project-main .project__text .project-description, .project-main .project__text .built-width {
+    font-size: 1rem;
   }
 }
 
 .project-main .project__text .projects-page__links {
-  margin-top: 10px;
-  cursor: pointer;
+  margin-top: 20px;
 }
 
 .project-main .project__text .projects-page__links .projects-page__link {
   font-size: 1rem;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 992px) {
   .project-main .project__text .projects-page__links .projects-page__link {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
@@ -774,6 +880,129 @@ main {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.projects-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  display: none;
+}
+
+.projects-modal__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.projects-modal__inner .modal__body {
+  width: 700px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.projects-modal__inner .modal__body-mobile {
+  display: none;
+  width: 360px;
+  height: 800px;
+  position: relative;
+  transform: translateY(20px);
+}
+
+.projects-modal__inner .modal__body-mobile .mobile-viewport {
+  position: absolute;
+  height: 600px;
+  width: 325px;
+  top: 55px;
+  left: 14px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+
+.projects-modal__inner .modal__body-mobile .mobile-viewport .modal__image-mobile {
+  width: 100%;
+}
+
+.projects-modal__inner .modal__body-mobile .mobile-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-modal__inner .modal__body-mobile .smartphone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 700px;
+}
+
+.projects-modal__inner .modal__body-mobile::before {
+  content: "";
+  position: fixed;
+  top: 10px;
+  left: 13px;
+  height: 50px;
+  width: 326px;
+  background-color: #292929;
+  z-index: 1000;
+  border-radius: 40px 40px 0 0;
+}
+
+.projects-modal__inner .modal__body-mobile::after {
+  content: "";
+  position: fixed;
+  bottom: 110px;
+  left: 13px;
+  height: 40px;
+  width: 326px;
+  background-color: #292929;
+  z-index: 1000;
+  border-radius: 0 0 40px 40px;
+}
+
+.projects-modal__inner .modal__body-desktop {
+  display: none;
+  width: 800px;
+}
+
+.projects-modal__inner .modal__body-desktop .desktop-viewport {
+  position: absolute;
+  height: 405px;
+  width: 670px;
+  top: 61px;
+  left: 6px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+
+.projects-modal__inner .modal__body-desktop .desktop-viewport .modal__image-desktop {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  margin-bottom: -5px;
+}
+
+.projects-modal__inner .modal__body-desktop .laptop {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 450px;
 }
 
 .back-to-top {
@@ -835,6 +1064,7 @@ main {
 .attribution__icons .social-icon {
   width: 30px;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .attribution__text {
