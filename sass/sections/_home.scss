@@ -12,7 +12,7 @@
     @include responsive($tablet_large) {
         padding: 0;
         justify-content: center;
-        background-image: url("/images/home-bg.png");
+        background-image: url("../images/home-bg.png");
         background-size: 50%;
         background-repeat: no-repeat;
         background-position: 115%;
