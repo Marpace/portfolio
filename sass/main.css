@@ -603,8 +603,39 @@ main {
     gap: 20px;
   }
 }
-.resume__img {
+.resume-container__img {
   width: 100%;
+}
+.resume-container__page-number {
+  position: relative;
+  width: 50px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.resume-container__page-number .page-number__selector {
+  position: absolute;
+  left: -7px;
+  top: 0;
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: #21fa90;
+  transition-property: left;
+  transition-duration: 300ms;
+}
+.resume-container__page-number span {
+  position: relative;
+  color: #21fa90;
+  transition-property: color;
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+.resume-container__page-number .number-active {
+  color: #292929;
 }
 .resume__buttons {
   width: 100%;

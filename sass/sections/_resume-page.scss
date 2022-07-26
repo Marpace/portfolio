@@ -7,8 +7,39 @@
         gap: 20px;
     }
 
-    &__img {
-        width: 100%;
+    &-container {
+        &__img {
+            width: 100%;
+        }
+        &__page-number {
+            position: relative;
+            width: 50px;
+            margin: 10px auto;
+            @include flex_centered(row);
+            justify-content: space-between;
+
+            .page-number__selector {
+                position: absolute;
+                // left: 35px;
+                left: -7px;
+                top: 0;
+                height: 100%;
+                aspect-ratio: 1/1;
+                background-color: $spring_green;
+                transition-property: left;
+                transition-duration: 300ms;
+            }
+            span {
+                position: relative;
+                color: $spring_green;
+                transition-property: color;
+                transition-duration: 300ms;
+                cursor: pointer;
+            }
+            .number-active {
+                color: $raisin_black;
+            }
+        }
     }
     &__buttons {
         width: 100%;
