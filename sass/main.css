@@ -603,8 +603,19 @@ main {
     gap: 20px;
   }
 }
+.resume-container {
+  position: relative;
+}
 .resume-container__img {
   width: 100%;
+}
+.resume-container .resume-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 300ms;
 }
 .resume-container__page-number {
   position: relative;
