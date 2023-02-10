@@ -25,7 +25,7 @@ function Projects(props) {
             projectName: "Snake Race",
             liveLink: "https://marpace.github.io/snake-race-react/",
             repoLink: "",
-            frontendLink: "https://github.com/Marpace/snake-race-react",
+            frontendLink: "https://github.com/Marpace/snake-race-react/tree/master",
             backendLink: "https://github.com/Marpace/snake-race-backend"
         },
         {
@@ -64,6 +64,8 @@ function Projects(props) {
                 projectName={project.projectName}
                 liveLink={project.liveLink}
                 repoLink={project.repoLink}
+                frontendLink={project.frontendLink}
+                backendLink={project.backendLink}
             />
         ))}
         <div className="projects-see-more">
