@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    // @include flex_centered(row);
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $raisin_black;
+    padding: 50px 10%;
+    @include responsive($tablet_large) {
+        padding: 50px 15%;
+    }
+    @include responsive($desktop) {
+        padding: 50px 20%;
+    }
+    @include responsive($desktop_large) {
+        padding: 50px 25%;
+    }
+}
+
+
+.visible {
+    opacity: 1 !important;
+}
+
+.invisible {
+    opacity: 0 !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.show-flex {
+    display: flex !important;
+}
+.show-block {
+    display: block !important;
+}
+
+.modal-open {
+    overflow: hidden;
+    height: 100vh;
+}

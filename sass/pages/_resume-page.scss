@@ -1,0 +1,228 @@
+.resume-main {
+    padding: 30px 5%;
+    @include responsive($tablet_large) {
+        padding: 50px 15%;
+    }
+    @include responsive($desktop) {
+        padding: 50px 20%;
+    }
+    @include responsive($desktop_large) {
+        padding: 50px 25%;
+    }
+
+    .button--fixed {
+        position: fixed;
+        bottom: 20px;
+        right: 9%;
+        padding: 10px;
+        background-color: $raisin_black;
+        width: 50px;
+        border: 1px solid $spring_green;
+        z-index: 100;
+        @include responsive($tablet_large) {
+            top: 50px;
+            right: calc(15% - 70px);
+        }
+        @include responsive($desktop) {
+            right: calc(20% - 70px);
+            transition-property: box-shadow;
+            transition-duration: 200ms;
+
+            &:hover {
+                box-shadow: 0 0 16px -5px $spring_green;
+            }
+        }
+        @include responsive($desktop_large) {
+            right: calc(25% - 70px);
+        }
+    }
+    .resume {
+        width: 100%;
+        background-color: $text_white;
+        padding: 20px;
+        @include responsive($tablet) {
+            padding: 50px;
+            position: relative;
+        }
+
+        &__photo {
+            display: none;
+            @include responsive($tablet) {
+                display: block;
+                position: absolute;
+                height: 0px;
+                width: 150px;
+                right: 50px;
+                background-color: rgb(88, 153, 88);
+                transition-property: height;
+                transition-duration: 500ms;
+                border: 3px solid rgb(88, 153, 88);
+                overflow: hidden;
+            }
+            &-image {
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+        .photo-open {
+            height: 160px;
+        }
+        p, a, h1, h2, h3, h4 {
+            color: $raisin_black;
+            // line-height: .7;
+        }
+        &__section {
+            margin-bottom: 50px;
+
+            &-title {
+                margin-bottom: 12px;
+                @include responsive($tablet_large) {
+                    font-size: 2rem;
+                    margin-bottom: 20px;
+                }
+            }
+            ul {
+                list-style: none;
+                li {
+                    margin: 5px 0;
+                    display: flex;
+                    // align-items: center;
+                    gap: 10px;
+
+                    .list-dot {
+                        height: 8px;
+                        width: 8px;
+                        background-color: rgb(88, 153, 88);
+                        border-radius: 50%;
+                        translate: 0 5px;
+                    }
+                }
+                @include responsive($tablet_large) {
+                    list-style: none;
+                    height: 145px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                }
+            }
+            .resume__block {
+                margin-bottom: 20px;
+                &-date {
+                    color: rgb(100, 100, 100);
+                    font-size: 1rem;
+                }
+                &-title {
+                    color: rgb(88, 153, 88);
+                }
+            }
+        }
+        &__header {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            &-title {
+                font-size: 2.7rem;
+                display: inline-block;
+                @include responsive($tablet_large) {
+                    font-size: 3.5rem;
+                }
+            }
+        }
+        &__education {
+            ul {
+                @include responsive($tablet_large) {
+                    height: 100px;
+                }
+            }
+        }
+    }
+}
+
+
+// .resume {
+//     justify-content: flex-start;
+//     @include responsive($desktop) {
+//         flex-direction: row-reverse;
+//         flex-wrap: nowrap;
+//         align-items: flex-start;
+//         gap: 20px;
+//     }
+
+//     &-container {
+//         position: relative;
+//         &__img {
+//             width: 100%;
+//         }
+//         .resume-2 {
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             opacity: 0;
+//             transition-property: opacity;
+//             transition-duration: 300ms;
+//         }
+//         &__page-number {
+//             position: relative;
+//             width: 50px;
+//             margin: 10px auto;
+//             @include flex_centered(row);
+//             justify-content: space-between;
+
+//             .page-number__selector {
+//                 position: absolute;
+//                 // left: 35px;
+//                 left: -7px;
+//                 top: 0;
+//                 height: 100%;
+//                 aspect-ratio: 1/1;
+//                 background-color: $spring_green;
+//                 transition-property: left;
+//                 transition-duration: 300ms;
+//             }
+//             span {
+//                 position: relative;
+//                 color: $spring_green;
+//                 transition-property: color;
+//                 transition-duration: 300ms;
+//                 cursor: pointer;
+//             }
+//             .number-active {
+//                 color: $raisin_black;
+//             }
+//         }
+//     }
+//     &__buttons {
+//         width: 100%;
+//         @include responsive($desktop) {
+//             max-width: 200px;
+//         }
+//         @include responsive($desktop_large) {
+//             min-width: 200px;
+//         }
+
+//         .pablo-photo {
+//             display: none;
+//             @include responsive($desktop) {
+//                 display: block;
+//                 width: 100%;
+//                 height: 230px;
+//                 background-color: $text_white;
+//             }
+//         }
+//         .resume__button {
+//             display: block;
+//             text-align: center;
+//             width: 100%;
+//             @include responsive($tablet_large) {
+//                 width: 50%;
+//             }
+//             @include responsive($desktop) {
+//                 width: 100%;
+//             }
+//         }
+//     }
+// }
+
+
+

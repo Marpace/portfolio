@@ -1,0 +1,31 @@
+.skills {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  
+  .skills-block {
+    
+    &__line {
+      display: flex;
+      align-items: flex-end;
+      height: 45px;
+      transition-property: opacity;
+      transition-duration: 500ms;
+
+      &--green {
+        color: $spring_green;
+        translate: 0px 5px;
+        font-size: 2.5rem;
+        transition-property: opacity;
+        transition-duration: 500ms;
+      }
+      &--white {
+        transition-property: opacity;
+        transition-duration: 500ms;
+      }
+    }
+  }
+}

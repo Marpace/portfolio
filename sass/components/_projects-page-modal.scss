@@ -1,0 +1,98 @@
+.projects-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: .6);
+    @include flex_centered(column);
+    display: none;
+    
+    &__inner{
+        @include flex_centered(column);
+        position: relative;
+        
+        .close-modal {
+            top: 50px;
+            left: calc(100% + 50px);  
+            position: absolute;
+            padding: 10px;
+            border: 1px solid $spring_green;
+            background: transparent;
+            cursor: pointer;
+            z-index: 1000;
+            &:hover {
+                box-shadow: 0 0 16px -5px $spring_green;
+            }
+        }
+        .modal__body {
+            width: 700px;
+            height: 800px;
+            @include flex_centered(column);
+
+            &-mobile {
+                display: none;
+                width: 360px;
+                height: 800px;
+                position: relative;
+                transform: translateY(20px);
+                
+
+                .mobile-viewport {
+                    position: absolute;
+                    height: 662px;
+                    width: 308px;
+                    top: 19px;
+                    left: 30px;
+                    border-radius: 30px;
+                    -ms-overflow-style: none; 
+                    scrollbar-width: none; 
+                    overflow-y: scroll; 
+    
+                    .modal__image-mobile {
+                        width: 100%;
+                        // margin-bottom: -5px;
+                    }
+                }
+                .mobile-viewport::-webkit-scrollbar {
+                    display: none; 
+                }
+                .smartphone {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 700px;
+                    // z-index: 100;
+                }
+            }
+            &-desktop {
+                display: none;
+                width: 800px;
+                .desktop-viewport {
+                    position: absolute;
+                    height: 406px;
+                    width: 714px;
+                    top: 61px;
+                    left: -8px;
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                    overflow-y: scroll;
+
+                    .modal__image-desktop {
+                        width: 100%;
+                        min-height: 100%;
+                        object-fit: cover;
+                        margin-bottom: -5px;
+                    }
+                }
+                .laptop {
+                    position: absolute;
+                    top: 19px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: 590px
+                }
+            }
+        }
+    }
+}

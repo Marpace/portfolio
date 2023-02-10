@@ -1,0 +1,20 @@
+.button--green {
+    width: 170px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.5rem;
+    background-color: $spring_green;
+    border: 1px solid $raisin_black;
+    margin-top: 20px;
+    padding: 5px 0;
+    color: $raisin_black;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+
+    &:hover {
+        background-color: $raisin_black;
+        color: $spring_green;
+        border: 1px solid $spring_green;
+        transition: 200ms;
+    }
+}

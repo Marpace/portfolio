@@ -1,0 +1,64 @@
+.home {
+    height: calc(100vh - 50px);
+    width: 100%;
+    padding: 20px 0 70px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include responsive($tablet) {
+        padding: 100px 0 70px;
+    }
+    @include responsive($tablet_large) {
+        padding: 0;
+        justify-content: center;
+        background-image: url("../images/home-bg.png");
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: 115%;
+    }
+
+    .header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .header__title {
+            font-size: 3.8rem;
+            line-height: 1.2; 
+            @include responsive($tablet) {
+                font-size: 5rem;
+            }    
+            @include responsive($tablet_large) {
+                .title-br {
+                    display: none;
+                }
+            }   
+        }
+    }
+
+    @keyframes upDown {
+        20% {transform: translateY(10px);}
+        50% {transform: translateY(0px);}
+        75% {transform: translateY(10px);}
+        100% {transform: translateY(0px);}
+    }
+
+    .arrow-down {
+        width: 100%;
+        text-align: center;
+        transition: .3s;
+
+        .arrow-down__icon {
+            bottom: 20px;
+            margin: auto;
+            animation-name: upDown;
+            animation-duration: 1s;
+            animation-delay: 2s;
+        }
+        @include responsive($tablet_large) {
+            display: none;
+        }
+    }
+}
+

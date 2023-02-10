@@ -1,0 +1,12 @@
+.success-main {
+  justify-content: center;
+  flex-direction: column;
+
+  .success-header {
+    font-size: 3.8rem;
+    line-height: 1.2; 
+    @include responsive($tablet) {
+      font-size: 4rem;
+    }
+  }   
+}

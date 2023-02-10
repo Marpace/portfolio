@@ -1,0 +1,30 @@
+body{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+}
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, p, span {
+    color: $text_white;
+}
+
+h1, h2, h3, h4 {
+    letter-spacing: 3px;
+}
+a {
+    color: $spring_green;
+}
+
+.section-title {
+    font-size: 2.7rem;
+    width: 100%;
+    margin: 50px 0;
+    @include responsive($tablet_large) {
+        font-size: 3rem;
+    }
+    @include responsive($desktop) {
+        font-size: 3.5rem;
+    } 
+}
