@@ -31,7 +31,7 @@ function Contact(props) {
     <form className="contact-form" action="https://formsubmit.co/2d2ae6054f364c0649d09383e5aa88ef" method="POST">
 
         {/* FORMSUBMIT OPTIONS */}
-        <input type="hidden" name="_next" value="http://localhost:3000/success"></input>
+        <input type="hidden" name="_next" value="https://Marpace.github.io/portfolio/success"></input>
         <input type="hidden" name="_subject" value="New message from portfolio!"></input>
         <input type="text" name="_honey" style={{display: "none"}}></input>
         <input type="hidden" name="_template" value="table"></input>
