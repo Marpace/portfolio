@@ -1,8 +1,11 @@
+import {Link} from "react-router-dom"
+
 function SuccessPage() {
   return (
     <main className="success-main">
     <h1 className="success-header">Thank you for contacting me!<br /> I will get back to you shortly.</h1>
-    <a className="button--green" href="index.html">Back to main page</a>
+    <Link className="button--green" to={"/"}>Back to main page</Link>
+    {/* <a className="button--green" href="/home">Back to main page</a> */}
   </main>
 
   )
