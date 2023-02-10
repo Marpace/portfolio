@@ -1,0 +1,150 @@
+.navigation {
+    display: none; 
+
+    @include responsive($desktop) {
+        height: 450px;
+        width: 100px;
+        display: flex;
+        position: fixed;
+        left: 10%;
+        top: 50%;
+        translate: 0 -50%;
+        overflow: hidden;
+
+        &:hover > .navigation__arrows {
+            opacity: 1;
+        }
+        &__line {
+            width: 2px;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            translate: -50% 0;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10% ,$spring_green 50%, rgba(0, 0, 0, 0) 90%);
+        }
+        &__section {
+            position: absolute;
+            color: $spring_green;
+            padding: 10px 0;
+            border-top: 2px solid $spring_green;
+            border-bottom: 2px solid $spring_green;
+            left: 50%;
+            translate: -50% 0;
+            transition-property: top;
+            transition-duration: 300ms;
+            background-color: $raisin_black;
+        }
+        .section-active {
+            top: 50%;
+            translate: -50% -50%;
+        }
+        .hidden-above {
+            top: -50px;
+        }
+        .hidden-below {
+            top: 110%;
+        }
+        &__arrows {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            opacity: 0;
+            transition: .3s;
+
+            img {
+                cursor: pointer;
+            }
+            
+        }
+    }
+}
+
+
+
+// .navigation {
+//     display: none;
+
+//     @include responsive($desktop){
+//         height: 450px;
+//         width: 100px;
+//         display: flex;
+//         position: fixed;
+//         left: 10%;
+//         top: 50%;
+//         transform: translate(-50%, -50%);
+//         &__inner-wrap {
+//             overflow: hidden;
+//             width: 100%;
+//             height: 100%;
+            
+//             .navigation__inner {
+//                 height: 1230px;
+//                 width: 100%;
+//                 padding: 190px 0;
+//                 position: relative;
+//                 transition: .3s;
+    
+//                 &-line {
+//                     height: 800px;
+//                     width: 4px;
+//                     position: absolute;
+//                     top: 200px;
+//                     left: 50%;
+//                     transform: translate(-50%);
+//                     background-color: $spring_green;
+//                     z-index: -1;
+//                 }
+//                 &-section {
+//                     @include flex_centered(row);
+//                     margin-bottom: 190px;
+//                     background-color: $raisin_black;
+                    
+//                     h3 {
+//                         // height: 70px;
+//                         padding: 13px 0;
+//                         color: $spring_green;
+//                         font-size: 1.7rem;
+//                         border-top: 4px solid $spring_green;
+//                         border-bottom: 4px solid $spring_green;
+//                     }
+//                 }
+//             }
+//         }
+//         &__arrows {
+//             position: absolute;
+//             top: 50%;
+//             left: 50%;
+//             transform: translate(-50%, -50%);
+//             height: 120%;
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: space-between;
+//             opacity: 0;
+//             transition: .3s;
+
+//             img {
+//                 cursor: pointer;
+//             }
+         
+//         }
+//         &:hover > .navigation__arrows {
+//             opacity: 1;
+//         }
+//     }
+// }
+
+
+// .navigation::after {
+//     content: "";
+//     position: absolute;
+//     top: -1px;
+//     left: 0;
+//     height: 452px;
+//     width: 100px;
+//     background-image: linear-gradient(to top, #292929, rgba(0, 0, 0, 0), #292929);
+// }
