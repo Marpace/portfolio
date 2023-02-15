@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import ResumeBlock from "./resume page/ResumeBlock";
-import ResumePhoto from "./resume page/ResumePhoto";
+import ResumeBlock from "./components/resume page/ResumeBlock";
+import ResumePhoto from "./components/resume page/ResumePhoto";
 
 function ResumePage() {
 

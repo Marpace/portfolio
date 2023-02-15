@@ -1,4 +1,3 @@
-import ProjectsPage from "../ProjectsPage";
 
 function Footer(props) {
 

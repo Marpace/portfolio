@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import {useInView} from "react-intersection-observer";
-import ProjectsPage from "../ProjectsPage";
 
 function About(props) {
 

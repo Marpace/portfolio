@@ -1,10 +1,10 @@
-import Hero from './home/Hero';
-import About from "./home/About";
-import Skills from './home/Skills';
-import Projects from './home/Projects';
-import Contact from './home/Contact';
-import Footer from './home/Footer';
-import Navigation from './home/Navigation';
+import Hero from './components/home/Hero';
+import About from "./components/home/About";
+import Skills from './components/home/Skills';
+import Projects from './components/home/Projects';
+import Contact from './components/home/Contact';
+import Footer from './components/home/Footer';
+import Navigation from './components/home/Navigation';
 
 import {useState} from "react";
 
