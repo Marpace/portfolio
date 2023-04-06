@@ -11,6 +11,17 @@ export const projects = [
     backendRepo: "https://github.com/Marpace/paint-paradise-backend"
   },
   {
+    desktopSrc: "./images/projects/sketch-dt.jpg",
+    mobileSrc: "images/projects/sketch-m.jpg",
+    projectTitle: "Sketch",
+    projectDescription: "Online drawing and guessing game, up to 8 players at once",
+    builtWith: "React / Node / Socket.io",
+    projectLive: "https://marpace.github.io/drawing-app/",
+    projectRepo: "",
+    frontendRepo: "https://github.com/Marpace/drawing-app",
+    backendRepo: "https://github.com/Marpace/drawing-app-backend"
+  },
+  {
     desktopSrc: "images/projects/projects-dt-7.png",
     mobileSrc: "images/projects/projects-m-7.jpg",
     projectTitle: "Snake Race",
