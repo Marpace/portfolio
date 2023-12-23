@@ -1,10 +1,13 @@
 function ProjectsBlock(props) {
 
+  const desktop = window.screen.width > 1440 ? true : false
+
   function handleRepoClick(e) {
     if(props.projectRepo === "") e.preventDefault();
   }
 
   function handleImageClick(e) {
+    if(!desktop) return;
     props.setModalImage({size: e.target.id, src: e.target.src})
   }
 
@@ -21,8 +24,8 @@ function ProjectsBlock(props) {
             <p className="project-description">{props.projectDescription}</p>
             <p className="built-with">{`Built with: ${props.builtWith}`}</p> 
             <div className="project-links">
-                <a className="link" href={props.projectLive}>Live</a>
-                <span className={props.projectRepo === "n/a" ? "hidden" : ""}>|</span>
+                <a className={`link ${props.projectLive === "n/a" ? "hidden" : ""}`} href={props.projectLive}>Live</a>
+                <span className={props.projectRepo === "n/a" ? "hidden" : "link-separator"}>|</span>
                 <div className="repo-links">
                   <a 
                     onClick={handleRepoClick}
@@ -31,7 +34,9 @@ function ProjectsBlock(props) {
                   <a className={`link invisible-link ${props.projectRepo === "" ? "" : "hidden"}`} href={props.frontendRepo}>Frontend</a>
                   <a className={`link invisible-link ${props.projectRepo === "" ? "" : "hidden"}`} href={props.backendRepo}>Backend</a>
                 </div>
-            </div>
+                <span className={props.projectDesign === "n/a" ? "hidden" : "link-separator"}>|</span>
+                <span className={`link ${props.projectDesign === "n/a" ? "hidden" : ""}`}>Design</span>
+            </div> 
         </div> 
     </div>
   )

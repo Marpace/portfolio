@@ -1,10 +1,35 @@
 import { useEffect, useState } from "react";
-import ResumeBlock from "./components/resume page/ResumeBlock";
-import ResumePhoto from "./components/resume page/ResumePhoto";
+import ResumeBlock from "../components/resume page/ResumeBlock";
+import ResumePhoto from "../components/resume page/ResumePhoto";
 
 function ResumePage() {
 
   const [experienceBlocks, setExperienceBlocks] = useState([
+    {
+      dates: "October 2023 - Present",
+      title: "Assistant Property Manager",
+      thirdLine: "Crossbridge Condominium Services",
+      listItems: [
+        "Respond to emails, phone calls, general inquiries",
+        "Scheduling in-suite and common areas maintenance and repairs",
+        "Obtain quotes ",
+        "Preparing a monthly variances report on building expenses",
+        "Assisting property manager in preparing a monthly report for board of directors",
+        "Prepare Annual General Meeting packages",
+      ]
+    },
+    {
+      dates: "March 2023 - September 2023",
+      title: "Site Administrator",
+      thirdLine: "Crossbridge Condominium Services",
+      listItems: [
+        "Respond to emails, phone calls, general inquiries",
+        "Greet all visitors, residents, owners, and contractors",
+        "Keep an organized and complete file of each unit",
+        "Resolve administrative problems and inquiries",
+        "Prepare and send out compliance letters to unit owners"
+      ]
+    },
     {
       dates: "November 2020 - Present",
       title: "Freelance Web Developer",
@@ -21,7 +46,7 @@ function ResumePage() {
       ]
     },
     {
-      dates: "July 2021 - Present",
+      dates: "July 2021 - February 2023",
       title: "Supervisor",
       thirdLine: "CG Maintenance",
       listItems: [

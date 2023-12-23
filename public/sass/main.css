@@ -5,6 +5,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #21fa90;
 }
 
 h1, h2, h3, h4, p, span {
@@ -15,14 +16,10 @@ h1, h2, h3, h4 {
   letter-spacing: 3px;
 }
 
-a {
-  color: #21fa90;
-}
-
 .section-title {
   font-size: 2.7rem;
   width: 100%;
-  margin: 50px 0;
+  padding: 50px 0;
 }
 @media only screen and (min-width: 992px) {
   .section-title {
@@ -310,18 +307,26 @@ main {
   display: flex;
   flex-direction: column;
 }
-.home .header .header__title {
+.home .header__name {
   font-size: 3.8rem;
   line-height: 1.2;
 }
 @media only screen and (min-width: 768px) {
-  .home .header .header__title {
+  .home .header__name {
     font-size: 5rem;
   }
 }
 @media only screen and (min-width: 992px) {
-  .home .header .header__title .title-br {
+  .home .header__name .title-br {
     display: none;
+  }
+}
+.home .header__title {
+  font-size: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  .home .header__title {
+    font-size: 3rem;
   }
 }
 @keyframes upDown {
@@ -835,7 +840,6 @@ main {
 }
 .projects-main .project__text .project-links .link {
   font-size: 1rem;
-  margin: 0 5px;
   cursor: pointer;
 }
 @media only screen and (min-width: 992px) {
@@ -848,11 +852,18 @@ main {
 }
 .projects-main .project__text .project-links .repo-links:hover > .invisible-link {
   opacity: 1;
+  width: 75px;
+  margin-left: 5px;
 }
 .projects-main .project__text .project-links .repo-links .invisible-link {
   opacity: 0;
-  transition-property: opacity;
+  width: 0px;
+  transition-property: width, margin, opacity;
   transition-duration: 300ms;
+  overflow: hidden;
+}
+.projects-main .project__text .project-links .link-separator {
+  margin: 0 5px;
 }
 .projects-main .projects__btn {
   width: 100%;
@@ -969,6 +980,11 @@ main {
   margin: 5px 0;
   display: flex;
   gap: 10px;
+}
+@media only screen and (min-width: 992px) {
+  .resume-main .resume__section ul li {
+    width: 50%;
+  }
 }
 .resume-main .resume__section ul li .list-dot {
   height: 8px;

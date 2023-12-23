@@ -4,6 +4,7 @@ body{
 }
 a {
     text-decoration: none;
+    color: $spring_green;
 }
 
 h1, h2, h3, h4, p, span {
@@ -13,14 +14,11 @@ h1, h2, h3, h4, p, span {
 h1, h2, h3, h4 {
     letter-spacing: 3px;
 }
-a {
-    color: $spring_green;
-}
 
 .section-title {
     font-size: 2.7rem;
     width: 100%;
-    margin: 50px 0;
+    padding: 50px 0;
     @include responsive($tablet_large) {
         font-size: 3rem;
     }

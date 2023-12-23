@@ -2,10 +2,6 @@ import { useEffect } from "react";
 
 function Navigation(props) {
 
-  useEffect(() => {
-    console.log(props.currentSection)
-  }, [props.currentSection])
-
   function handleArrowClick(e) {
     const direction = e.target.id;
 

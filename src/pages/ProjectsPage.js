@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import ProjectsBlock from "./components/projects page/ProjectsPageBlock";
-import ProjectsModal from "./components/projects page/ProjectsModal";
-import {projects} from "./Data"
+import ProjectsBlock from "../components/projects page/ProjectsPageBlock";
+import ProjectsModal from "../components/projects page/ProjectsModal";
+import {projects} from "../Data"
 
 function ProjectsPage() {
 
@@ -26,6 +26,7 @@ function ProjectsPage() {
           projectRepo={project.projectRepo}
           frontendRepo={project.frontendRepo}
           backendRepo={project.backendRepo}
+          projectDesign={project.projectDesign}
           setModalImage={setModalImage}
         />
       ))}

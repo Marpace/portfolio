@@ -31,7 +31,8 @@ function Hero(props){
   return (
     <section id="home" className="home" ref={ref}>
       <header className="header">
-        <h1 className="header__title">Pablo <br className="title-br"/>Almonacid <br/>Full stack <br className="title-br"/>Developer</h1>
+        <h1 className="header__name">Pablo Almonacid</h1>
+        <h2 className="header__title">Full Stack developer</h2>
         <button onClick={handleContactClick} className="button--green">contact</button>
         <Link className="button--green" to={"/resume"}>View resume</Link>
       </header>

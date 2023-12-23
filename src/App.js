@@ -1,8 +1,8 @@
-import Home from './Home';
+import Home from './pages/Home';
 import {Routes, Route, HashRouter} from "react-router-dom"
-import ResumePage from './ResumePage';
-import ProjectsPage from './ProjectsPage';
-import SuccessPage from './SuccessPage';
+import ResumePage from './pages/ResumePage';
+import ProjectsPage from './pages/ProjectsPage';
+import SuccessPage from './pages/SuccessPage';
 
 function App() {
 

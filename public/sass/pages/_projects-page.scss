@@ -101,7 +101,6 @@
                 display: flex;
                 .link {
                     font-size: 1rem;
-                    margin: 0 5px;
                     cursor: pointer;
                     @include responsive($tablet_large) {
                         font-size: 1rem;
@@ -111,14 +110,20 @@
                     display: flex;
                     &:hover > .invisible-link {
                         opacity: 1;
+                        width: 75px;
+                        margin-left: 5px
                     }
                     .invisible-link {
                         opacity: 0;
-                        transition-property: opacity;
+                        width: 0px;
+                        transition-property: width, margin, opacity;
                         transition-duration: 300ms;
+                        overflow: hidden;
                     }
                 }
-                
+                .link-separator {
+                    margin: 0 5px;
+                }
             }
         }
     }

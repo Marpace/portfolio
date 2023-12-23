@@ -1,5 +1,15 @@
 export const projects = [
   {
+    desktopSrc: "./images/projects/connect-4-dt.png",
+    mobileSrc: "images/projects/connect-4-m.png",
+    projectTitle: "Connect 4",
+    projectDescription: "Features online and PC modes, and the ability to send emoticons to your oponent",
+    builtWith: "Express / React / Node / Socket.io",
+    projectLive: "https://marpace.github.io/Connect4",
+    projectRepo: "https://github.com/Marpace/Connect4/tree/master",
+    projectDesign: "n/a"
+  },
+  {
     desktopSrc: "./images/projects/projects-dt-3.jpg",
     mobileSrc: "images/projects/projects-m-3.jpg",
     projectTitle: "Paint Paradise (version 2)",
@@ -8,7 +18,8 @@ export const projects = [
     projectLive: "https://marpace.github.io/paint-paradise/",
     projectRepo: "",
     frontendRepo: "https://github.com/Marpace/paint-paradise",
-    backendRepo: "https://github.com/Marpace/paint-paradise-backend"
+    backendRepo: "https://github.com/Marpace/paint-paradise-backend",
+    projectDesign: "n/a"
   },
   {
     desktopSrc: "./images/projects/sketch-dt.jpg",
@@ -19,18 +30,20 @@ export const projects = [
     projectLive: "https://marpace.github.io/drawing-app/",
     projectRepo: "",
     frontendRepo: "https://github.com/Marpace/drawing-app",
-    backendRepo: "https://github.com/Marpace/drawing-app-backend"
+    backendRepo: "https://github.com/Marpace/drawing-app-backend",
+    projectDesign: "n/a"
   },
   {
     desktopSrc: "images/projects/projects-dt-7.png",
     mobileSrc: "images/projects/projects-m-7.jpg",
     projectTitle: "Snake Race",
-    projectDescription: "Classic snake game with online multiplayer. Features four diferent game types and chat.",
+    projectDescription: "Classic snake game with online multiplayer. Features four different game types and chat.",
     builtWith: "React / Node / Socket.io",
     projectLive: "https://marpace.github.io/snake-race-react/",
     projectRepo: "",
     frontendRepo: "https://github.com/Marpace/snake-race-react/tree/master",
-    backendRepo: "https://github.com/Marpace/snake-race-backend"
+    backendRepo: "https://github.com/Marpace/snake-race-backend",
+    projectDesign: "n/a"
   },
   {
     desktopSrc: "images/projects/multi-step-form-dt.png",
@@ -39,7 +52,8 @@ export const projects = [
     projectDescription: "Responsive multi-step-form with client side validation",
     builtWith: "React / Sass",
     projectLive: "https://marpace.github.io/multi-step-form/",
-    projectRepo: "https://github.com/Marpace/multi-step-form"
+    projectRepo: "https://github.com/Marpace/multi-step-form",
+    projectDesign: "n/a"
   },
   {
     desktopSrc: "images/projects/projects-dt-1.jpg",
@@ -50,7 +64,8 @@ export const projects = [
     projectLive: "https://marpace.github.io/todo-app-react/",
     projectRepo: "",
     frontendRepo: "https://github.com/Marpace/todo-app-react",
-    backendRepo: "https://github.com/Marpace/todo-app-API"
+    backendRepo: "https://github.com/Marpace/todo-app-API",
+    projectDesign: "n/a"
   },
   {
     desktopSrc: "images/projects/projects-dt-4.jpg",
@@ -59,7 +74,8 @@ export const projects = [
     projectDescription: "Features include adding new comments and replying to other users. It is connected to a database so new comments and replies persist after refreshing.",
     builtWith: "MongoDB / Node / Express / EJS",
     projectLive: "https://comments-page.herokuapp.com/",
-    projectRepo: "https://github.com/Marpace/interactive-comments-section"
+    projectRepo: "https://github.com/Marpace/interactive-comments-section",
+    projectDesign: "n/a"
   },
   {
     desktopSrc: "images/projects/projects-dt-2.jpg",
@@ -68,7 +84,8 @@ export const projects = [
     projectDescription: "Features include a carousel component for product images and add-to-cart functionality. Items can be viewed and deleted from cart.",
     builtWith: "HTML / SASS / Jquery",
     projectLive: "https://marpace.github.io/ecommerce-product-page-main/",
-    projectRepo: "https://github.com/Marpace/ecommerce-product-page-main"
+    projectRepo: "https://github.com/Marpace/ecommerce-product-page-main",
+    projectDesign: "n/a"
   },
   {
     desktopSrc: "images/projects/projects-dt-5.jpg",
@@ -77,7 +94,8 @@ export const projects = [
     projectDescription: "Responsive home page using CSS Flexbox for layout and collapsable menu on mobile version",
     builtWith: "HTML / SASS / Jquery",
     projectLive: "https://marpace.github.io/easybank-landing-page/",
-    projectRepo: "https://github.com/Marpace/easybank-landing-page"
+    projectRepo: "https://github.com/Marpace/easybank-landing-page",
+    projectDesign: "n/a"
   },
   {
     desktopSrc: "images/projects/projects-dt-6.jpg",
@@ -86,7 +104,8 @@ export const projects = [
     projectDescription: "Landing page for painting business. Features a paralax background and lighbox gallery",
     builtWith: "HTML / CSS / Javascript",
     projectLive: "https://www.caspianpaintingdesign.com",
-    projectRepo: "n/a"
+    projectRepo: "n/a",
+    projectDesign: "n/a"
   },
   {
     desktopSrc: "images/projects/projects-dt-8.png",
@@ -94,8 +113,9 @@ export const projects = [
     projectTitle: "Paint Paradise",
     projectDescription: "My first website. Includes features such as carousels, accordions and lightbox gallery",
     builtWith: "HTML / CSS / Javascript / Bootstrap",
-    projectLive: "https://www.paintparadise.ca",
-    projectRepo: "n/a"
+    projectLive: "n/a",
+    projectRepo: "n/a",
+    projectDesign: "n/a"
   },
 ]
 
